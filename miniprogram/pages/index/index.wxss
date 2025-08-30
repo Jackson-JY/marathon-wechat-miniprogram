@@ -1,65 +1,328 @@
-/**index.wxss**/
+/**index.wxss*/
 
 page {
-  padding-top: 54rpx;
-  background-color: #f6f6f6;
-  padding-bottom: 60rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
 }
 
 .container {
-  font-family: PingFang SC;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  padding: 0;
+  color: #333;
 }
 
-.title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 44rpx;
-  margin-bottom: 40rpx;
-}
-.function_title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 36rpx;
-  text-align: left;
-  width: 93%;
-  margin-top: 50rpx;
+/* 顶部横幅 */
+.header-banner {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  padding: 60rpx 40rpx 40rpx;
+  border-radius: 0 0 40rpx 40rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+  overflow: hidden;
 }
 
-.top_tip {
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-title {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+
+.banner-subtitle {
   font-size: 28rpx;
-  font-family: PingFang SC;
+  color: rgba(255,255,255,0.9);
   font-weight: 400;
-  color: #888888;
-  margin-bottom: 28rpx;
 }
 
-.examples_container {
+.banner-decoration {
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  z-index: 1;
+}
+
+.runner-icon {
+  font-size: 80rpx;
+  opacity: 0.8;
+}
+
+/* 统计部分 */
+.stats-section {
+  padding: 0 40rpx 30rpx;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+  background: white;
+  border-radius: 24rpx;
+  padding: 40rpx 20rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0,0,0,0.1);
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* 移除分隔线，因为现在是网格布局 */
+
+.stat-number {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 8rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #666;
+  font-weight: 500;
+}
+
+.stat-hint {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 4rpx;
+  opacity: 0.8;
+}
+
+/* 让统计项可点击 */
+.stat-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stat-item:active {
+  transform: scale(0.95);
+}
+
+/* 功能模块 */
+.features-section {
+  padding: 0 40rpx 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 24rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+/* 调整第5个功能卡片的布局 */
+.feature-grid .feature-card:nth-child(5) {
+  grid-column: 1 / -1;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 32rpx 24rpx;
+  text-align: center;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6rpx;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+}
+
+.feature-card:active {
+  transform: translateY(4rpx);
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+}
+
+.feature-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.feature-desc {
+  font-size: 22rpx;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* 最近活动 */
+.recent-section {
+  padding: 0 40rpx 30rpx;
+}
+
+.activity-list {
+  background: white;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 32rpx rgba(0,0,0,0.1);
+}
+
+.activity-item {
   display: flex;
-  flex-direction: column;
-  gap: 16rpx;
-  width: 100%;
   align-items: center;
+  padding: 32rpx 24rpx;
+  border-bottom: 1rpx solid #f0f0f0;
 }
 
-.example_item {
-  border: 3rpx solid #e5e5e5;
-  border-radius: 10rpx;
-  padding: 24rpx;
-  width: 90%;
-  background-color: #fff;
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  font-size: 32rpx;
+  margin-right: 20rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.activity-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.activity-status {
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+}
+
+.activity-status.completed {
+  background: #e8f5e8;
+  color: #52c41a;
+}
+
+.activity-status.upcoming {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+.empty-state {
+  padding: 80rpx 40rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 24rpx;
+  opacity: 0.6;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+}
+
+.empty-hint {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 快捷操作 */
+.quick-actions {
+  padding: 0 40rpx 30rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 32rpx 24rpx;
+  border-radius: 20rpx;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+.action-btn.primary {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  box-shadow: 0 8rpx 24rpx rgba(255,107,107,0.3);
+}
+
+.action-btn.secondary {
+  background: white;
+  color: #333;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.1);
+}
+
+.action-btn.tertiary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 8rpx 24rpx rgba(102,126,234,0.3);
+}
+
+.action-btn:active {
+  transform: translateY(2rpx);
+}
+
+.action-icon {
+  font-size: 24rpx;
+  margin-right: 12rpx;
+}
+
+.action-text {
+  font-size: 28rpx;
+}
+
+/* 开发者功能区域 */
+.dev-section {
+  padding: 0 40rpx 40rpx;
+  margin-top: 20rpx;
+}
+
+/* 保留原有的云开发功能样式 */
 .power {
   margin-top: 30rpx;
-  border-radius: 5px;
+  border-radius: 16rpx;
   background-color: white;
-  width: 93%;
+  width: 100%;
   padding-bottom: 1rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0,0,0,0.1);
 }
 
 .power_info {
@@ -88,12 +351,12 @@ page {
 
 .power_info_text_title {
   margin-bottom: 10rpx;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 32rpx;
   display: flex;
   align-items: center;
-  font-family: 'PingFang SC';
-  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: #333;
 }
 
 .power_info_text_tag {
@@ -135,8 +398,23 @@ page {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.environment {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 24rpx;
-  margin-top: 25%;
+/* 响应式调整 */
+@media (max-width: 750rpx) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-actions {
+    flex-direction: column;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 调整快捷操作布局，第3个按钮独占一行 */
+.quick-actions .action-btn:nth-child(3) {
+  flex: 1 1 100%;
+  margin-top: 20rpx;
 }

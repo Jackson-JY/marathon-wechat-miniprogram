@@ -1,0 +1,173 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Garmin运动数据结构模式",
+  "description": "Garmin设备导出的运动数据JSON结构定义",
+  "type": "object",
+  "properties": {
+    "summarizedActivitiesExport": {
+      "type": "array",
+      "description": "运动记录数组",
+      "items": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "number",
+            "description": "活动唯一标识符"
+          },
+          "uuidMsb": {
+            "type": "number",
+            "description": "UUID高位部分"
+          },
+          "uuidLsb": {
+            "type": "number",
+            "description": "UUID低位部分"
+          },
+          "name": {
+            "type": "string",
+            "description": "活动名称"
+          },
+          "activityType": {
+            "type": "string",
+            "description": "活动类型"
+          },
+          "userProfileId": {
+            "type": "number",
+            "description": "用户档案ID"
+          },
+          "timeZoneId": {
+            "type": "number",
+            "description": "时区ID"
+          },
+          "beginTimestamp": {
+            "type": "number",
+            "description": "开始时间戳"
+          },
+          "eventTypeId": {
+            "type": "number",
+            "description": "事件类型ID"
+          },
+          "rule": {
+            "type": "string",
+            "description": "隐私规则"
+          },
+          "sportType": {
+            "type": "string",
+            "description": "运动类型"
+          },
+          "startTimeGmt": {
+            "type": "number",
+            "description": "GMT开始时间"
+          },
+          "startTimeLocal": {
+            "type": "number",
+            "description": "本地开始时间"
+          },
+          "duration": {
+            "type": "number",
+            "description": "持续时间（秒）"
+          },
+          "distance": {
+            "type": "number",
+            "description": "距离（米）"
+          },
+          "elevationGain": {
+            "type": "number",
+            "description": "海拔增益（米）"
+          },
+          "elevationLoss": {
+            "type": "number",
+            "description": "海拔损失（米）"
+          },
+          "avgSpeed": {
+            "type": "number",
+            "description": "平均速度（米/秒）"
+          },
+          "maxSpeed": {
+            "type": "number",
+            "description": "最大速度（米/秒）"
+          },
+          "avgHr": {
+            "type": "number",
+            "description": "平均心率（次/分）"
+          },
+          "maxHr": {
+            "type": "number",
+            "description": "最大心率（次/分）"
+          },
+          "minHr": {
+            "type": "number",
+            "description": "最小心率（次/分）"
+          },
+          "avgPower": {
+            "type": "number",
+            "description": "平均功率（瓦特）"
+          },
+          "maxPower": {
+            "type": "number",
+            "description": "最大功率（瓦特）"
+          },
+          "avgRunCadence": {
+            "type": "number",
+            "description": "平均跑步步频（步/分）"
+          },
+          "maxRunCadence": {
+            "type": "number",
+            "description": "最大跑步步频（步/分）"
+          },
+          "steps": {
+            "type": "number",
+            "description": "总步数"
+          },
+          "calories": {
+            "type": "number",
+            "description": "消耗卡路里"
+          },
+          "bmrCalories": {
+            "type": "number",
+            "description": "基础代谢率卡路里"
+          },
+          "startLongitude": {
+            "type": "number",
+            "description": "开始经度"
+          },
+          "startLatitude": {
+            "type": "number",
+            "description": "开始纬度"
+          },
+          "aerobicTrainingEffect": {
+            "type": "number",
+            "description": "有氧训练效果"
+          },
+          "normPower": {
+            "type": "number",
+            "description": "标准化功率"
+          },
+          "avgVerticalOscillation": {
+            "type": "number",
+            "description": "平均垂直摆动（厘米）"
+          },
+          "avgGroundContactTime": {
+            "type": "number",
+            "description": "平均地面接触时间（毫秒）"
+          },
+          "avgStrideLength": {
+            "type": "number",
+            "description": "平均步长（厘米）"
+          },
+          "avgFractionalCadence": {
+            "type": "number",
+            "description": "平均分数步频"
+          }
+        },
+        "required": [
+          "activityId",
+          "name",
+          "activityType",
+          "duration",
+          "distance"
+        ]
+      }
+    }
+  },
+  "required": ["summarizedActivitiesExport"]
+}

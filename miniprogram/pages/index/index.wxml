@@ -1,29 +1,141 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="title">快速了解云开发</view>
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-    <view class="power_info" data-index="{{index}}" data-type="{{ power.type }}" bindtap="onClickPowerInfo">
-      <view class="power_info_text">
-        <view class="power_info_text_title">
-          {{power.title}}
-          <view class="power_info_text_tag" wx:if="{{power.tag}}">{{power.tag}}</view>
-        </view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
-      </view>
-      <image wx:if="{{!power.showItem && power.item.length}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem && power.item.length}}" class="power_info_less" src="../../images/arrow.svg"></image>
-      <image wx:if="{{!power.item.length}}" class="power_item_icon" src="../../images/arrow.svg"></image>
+  <!-- 顶部横幅 -->
+  <view class="header-banner">
+    <view class="banner-content">
+      <view class="banner-title">马拉松伙伴</view>
+      <view class="banner-subtitle">专业跑步训练 · 赛事管理 · 成绩追踪</view>
     </view>
-    <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
-        <view class="line"></view>
-        <view class="power_item" bindtap="jumpPage" data-type="{{ item.type }}" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+    <view class="banner-decoration">
+      <view class="runner-icon">🏃‍♂️</view>
+    </view>
+  </view>
+
+  <!-- 快速统计 -->
+  <view class="stats-section">
+    <view class="stats-grid">
+      <view class="stat-item">
+        <view class="stat-number">{{totalRuns || 0}}</view>
+        <view class="stat-label">累计跑步</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-number">{{totalDistance || 0}}km</view>
+        <view class="stat-label">总里程</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-number">{{bestTime || '--'}}</view>
+        <view class="stat-label">最佳成绩</view>
+      </view>
+      <view class="stat-item" bindtap="navigateToExerciseData">
+        <view class="stat-number">{{exerciseRecords || 0}}</view>
+        <view class="stat-label">运动记录</view>
+        <view class="stat-hint">点击查看详情</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 主要功能模块 -->
+  <view class="features-section">
+    <view class="section-title">核心功能</view>
+    
+    <view class="feature-grid">
+      <view class="feature-card" bindtap="navigateToTraining">
+        <view class="feature-icon">🎯</view>
+        <view class="feature-title">训练计划</view>
+        <view class="feature-desc">个性化跑步训练方案</view>
+      </view>
+      
+      <view class="feature-card" bindtap="navigateToRaces">
+        <view class="feature-icon">🏁</view>
+        <view class="feature-title">赛事管理</view>
+        <view class="feature-desc">马拉松赛事报名与追踪</view>
+      </view>
+      
+      <view class="feature-card" bindtap="navigateToRecords">
+        <view class="feature-icon">📊</view>
+        <view class="feature-title">成绩记录</view>
+        <view class="feature-desc">详细跑步数据统计</view>
+      </view>
+      
+      <view class="feature-card" bindtap="navigateToCommunity">
+        <view class="feature-icon">👥</view>
+        <view class="feature-title">跑友社区</view>
+        <view class="feature-desc">与跑友分享交流</view>
+      </view>
+      
+      <view class="feature-card" bindtap="navigateToExerciseData">
+        <view class="feature-icon">📊</view>
+        <view class="feature-title">运动数据</view>
+        <view class="feature-desc">管理Garmin等运动数据</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最近活动 -->
+  <view class="recent-section">
+    <view class="section-title">最近活动</view>
+    <view class="activity-list">
+      <block wx:if="{{recentActivities && recentActivities.length > 0}}">
+        <view wx:for="{{recentActivities}}" wx:key="id" class="activity-item">
+          <view class="activity-icon">{{item.icon}}</view>
+          <view class="activity-content">
+            <view class="activity-title">{{item.title}}</view>
+            <view class="activity-time">{{item.time}}</view>
+          </view>
+          <view class="activity-status {{item.status}}">{{item.statusText}}</view>
+        </view>
+      </block>
+      <view wx:else class="empty-state">
+        <view class="empty-icon">📝</view>
+        <view class="empty-text">暂无活动记录</view>
+        <view class="empty-hint">开始你的第一次跑步吧！</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷操作 -->
+  <view class="quick-actions">
+    <view class="action-btn primary" bindtap="startRunning">
+      <view class="action-icon">▶️</view>
+      <view class="action-text">开始跑步</view>
+    </view>
+    <view class="action-btn secondary" bindtap="joinRace">
+      <view class="action-icon">🏃‍♀️</view>
+      <view class="action-text">报名赛事</view>
+    </view>
+    <view class="action-btn tertiary" bindtap="navigateToExerciseData">
+      <view class="action-icon">📊</view>
+      <view class="action-text">运动数据</view>
+    </view>
+  </view>
+
+  <!-- 云开发功能入口（保留原有功能） -->
+  <view class="dev-section" wx:if="{{showDevFeatures}}">
+    <view class="section-title">开发者功能</view>
+    <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
+      <view class="power_info" data-index="{{index}}" data-type="{{ power.type }}" bindtap="onClickPowerInfo">
+        <view class="power_info_text">
+          <view class="power_info_text_title">
+            {{power.title}}
+            <view class="power_info_text_tag" wx:if="{{power.tag}}">{{power.tag}}</view>
+          </view>
+          <view class="power_info_text_tip">{{power.tip}}</view>
+        </view>
+        <image wx:if="{{!power.showItem && power.item.length}}" class="power_info_more" src="../../images/arrow.svg"></image>
+        <image wx:if="{{power.showItem && power.item.length}}" class="power_info_less" src="../../images/arrow.svg"></image>
+        <image wx:if="{{!power.item.length}}" class="power_item_icon" src="../../images/arrow.svg"></image>
+      </view>
+      <view wx:if="{{power.showItem}}">
+        <view wx:key="title" wx:for="{{power.item}}">
+          <view class="line"></view>
+          <view class="power_item" bindtap="jumpPage" data-type="{{ item.type }}" data-page="{{item.page}}">
+            <view class="power_item_title">{{item.title}}</view>
+            <image class="power_item_icon" src="../../images/arrow.svg"></image>
+          </view>
         </view>
       </view>
     </view>
   </view>
+
   <cloud-tip-modal showTipProps="{{showTip}}" title="{{title}}" content="{{content}}"></cloud-tip-modal>
 </view>

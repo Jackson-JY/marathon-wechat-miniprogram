@@ -2,6 +2,14 @@
 Page({
   data: {
     showTip: false,
+    title: "",
+    content: "",
+    // 马拉松主题数据
+    totalRuns: 0,
+    totalDistance: 0,
+    bestTime: '--',
+    recentActivities: [],
+    showDevFeatures: false, // 控制是否显示开发者功能
     powerList: [
       {
         title: '云托管',
@@ -42,10 +50,6 @@ Page({
             type: 'selectRecord',
             title: '增删改查记录',
           },
-          // {
-          //   title: '聚合操作',
-          //   page: 'sumRecord',
-          // },
         ],
       },
       {
@@ -59,17 +63,6 @@ Page({
           },
         ],
       },
-      // {
-      //   type: 'singleTemplate',
-      //   title: '云模板',
-      //   tip: '基于页面模板，快速配置、搭建小程序页面',
-      //   tag: 'new',
-      // },
-      // {
-      //   type: 'cloudBackend',
-      //   title: '云后台',
-      //   tip: '开箱即用的小程序后台管理系统',
-      // },
       {
         title: '拓展能力-AI',
         tip: '云开发 AI 拓展能力',
@@ -83,9 +76,178 @@ Page({
       },
     ],
     haveCreateCollection: false,
-    title: "",
-    content: ""
   },
+
+  onLoad() {
+    this.loadUserData();
+    this.loadRecentActivities();
+  },
+
+  onShow() {
+    // 页面显示时刷新数据
+    this.loadUserData();
+  },
+
+  // 加载用户数据
+  loadUserData() {
+    // 这里应该从云数据库或本地存储加载用户数据
+    // 暂时使用模拟数据
+    this.setData({
+      totalRuns: 12,
+      totalDistance: 156.8,
+      bestTime: '3:45:20'
+    });
+    
+    // 加载运动记录数量
+    this.loadExerciseRecordsCount();
+  },
+
+  // 加载运动记录数量
+  async loadExerciseRecordsCount() {
+    try {
+      const result = await wx.cloud.callFunction({
+        name: 'exerciseDataFunctions',
+        data: {
+          type: 'getExerciseStats'
+        }
+      });
+
+      if (result.result.success) {
+        this.setData({
+          exerciseRecords: result.result.data.totalActivities
+        });
+      }
+    } catch (error) {
+      console.log('加载运动记录数量失败:', error);
+      // 如果云函数未部署，使用默认值
+      this.setData({
+        exerciseRecords: 0
+      });
+    }
+  },
+
+  // 加载最近活动
+  loadRecentActivities() {
+    // 模拟活动数据
+    const activities = [
+      {
+        id: 1,
+        icon: '🏃‍♂️',
+        title: '完成10公里训练',
+        time: '昨天 18:30',
+        status: 'completed',
+        statusText: '已完成'
+      },
+      {
+        id: 2,
+        icon: '🏁',
+        title: '报名2024北京马拉松',
+        time: '3天前',
+        status: 'upcoming',
+        statusText: '报名成功'
+      },
+      {
+        id: 3,
+        icon: '📊',
+        title: '更新个人最佳成绩',
+        time: '1周前',
+        status: 'completed',
+        statusText: '已更新'
+      }
+    ];
+
+    this.setData({
+      recentActivities: activities
+    });
+  },
+
+  // 导航到训练计划页面
+  navigateToTraining() {
+    wx.showToast({
+      title: '训练计划功能开发中',
+      icon: 'none'
+    });
+    // TODO: 实现页面跳转
+    // wx.navigateTo({
+    //   url: '/pages/training/index'
+    // });
+  },
+
+  // 导航到赛事管理页面
+  navigateToRaces() {
+    wx.showToast({
+      title: '赛事管理功能开发中',
+      icon: 'none'
+    });
+    // TODO: 实现页面跳转
+    // wx.navigateTo({
+    //   url: '/pages/races/index'
+    // });
+  },
+
+  // 导航到成绩记录页面
+  navigateToRecords() {
+    wx.showToast({
+      title: '成绩记录功能开发中',
+      icon: 'none'
+    });
+    // TODO: 实现页面跳转
+    // wx.navigateTo({
+    //   url: '/pages/records/index'
+    // });
+  },
+
+  // 导航到跑友社区页面
+  navigateToCommunity() {
+    wx.showToast({
+      title: '跑友社区功能开发中',
+      icon: 'none'
+    });
+    // TODO: 实现页面跳转
+    // wx.navigateTo({
+    //   url: '/pages/community/index'
+    // });
+  },
+
+  // 导航到运动数据页面
+  navigateToExerciseData() {
+    wx.navigateTo({
+      url: '/pages/exerciseData/index'
+    });
+  },
+
+  // 开始跑步
+  startRunning() {
+    wx.showToast({
+      title: '开始跑步功能开发中',
+      icon: 'none'
+    });
+    // TODO: 实现跑步功能
+    // wx.navigateTo({
+    //   url: '/pages/running/index'
+    // });
+  },
+
+  // 报名赛事
+  joinRace() {
+    wx.showToast({
+      title: '赛事报名功能开发中',
+      icon: 'none'
+    });
+    // TODO: 实现赛事报名
+    // wx.navigateTo({
+    //   url: '/pages/race-registration/index'
+    // });
+  },
+
+  // 显示/隐藏开发者功能
+  toggleDevFeatures() {
+    this.setData({
+      showDevFeatures: !this.data.showDevFeatures
+    });
+  },
+
+  // 原有的云开发功能方法
   onClickPowerInfo(e) {
     const app = getApp()
     if(!app.globalData.env) {
@@ -98,90 +260,226 @@ Page({
     console.log("click e", e)
     const index = e.currentTarget.dataset.index;
     const powerList = this.data.powerList;
-    const selectedItem = powerList[index];
-    console.log("selectedItem", selectedItem)
-    if (selectedItem.link) {
-      wx.navigateTo({
-        url: `../web/index?url=${selectedItem.link}&title=${selectedItem.title}`,
-      });
-    } else if (selectedItem.type) {
-      console.log("selectedItem", selectedItem)
-      wx.navigateTo({
-        url: `/pages/example/index?envId=${this.data.selectedEnv?.envId}&type=${selectedItem.type}`,
-      });
-    } else if (selectedItem.page) {
-      wx.navigateTo({
-        url: `/pages/${selectedItem.page}/index`,
-      });
-    } else if (
-      selectedItem.title === '数据库' &&
-      !this.data.haveCreateCollection
-    ) {
-      this.onClickDatabase(powerList,selectedItem);
-    } else {
-      selectedItem.showItem = !selectedItem.showItem;
+    powerList[index].showItem = !powerList[index].showItem;
+    if (powerList[index].title === '数据库' && !powerList[index].showItem) {
       this.setData({
-        powerList,
+        haveCreateCollection: false
       });
     }
+    this.setData({
+      powerList
+    });
   },
 
   jumpPage(e) {
-    const { type, page } = e.currentTarget.dataset;
-    console.log("jump page", type, page)
-    if (type) {
-      wx.navigateTo({
-        url: `/pages/example/index?envId=${this.data.selectedEnv?.envId}&type=${type}`,
-      });
-    } else {
-      wx.navigateTo({
-        url: `/pages/${page}/index?envId=${this.data.selectedEnv?.envId}`,
-      });
+    const type = e.currentTarget.dataset.type;
+    const page = e.currentTarget.dataset.page;
+    if (type === 'cloudbaserun') {
+      this.callCloudBaseRun();
+    } else if (type === 'getOpenId') {
+      this.getOpenId();
+    } else if (type === 'getMiniProgramCode') {
+      this.getMiniProgramCode();
+    } else if (type === 'createCollection') {
+      this.createCollection();
+    } else if (type === 'selectRecord') {
+      this.selectRecord();
+    } else if (type === 'uploadFile') {
+      this.uploadFile();
+    } else if (type === 'model-guide') {
+      this.modelGuide();
     }
   },
 
-  onClickDatabase(powerList,selectedItem) {
+  callCloudBaseRun() {
     wx.showLoading({
-      title: '',
+      title: '调用中...',
     });
-    wx.cloud
-      .callFunction({
-        name: 'quickstartFunctions',
+    wx.cloud.callContainer({
+      config: {
+        env: 'test-0g0g0g0g0g0g0g0g',
+      },
+      path: '/api/hello',
+      header: {
+        'X-WX-SERVICE': 'golang-xxxxx',
+      },
+      method: 'POST',
+      data: {
+        name: 'CloudBase Run',
         data: {
-          type: 'createCollection',
-        },
-      })
-      .then((resp) => {
-        if (resp.result.success) {
-          this.setData({
-            haveCreateCollection: true,
-          });
+          message: 'Hello from CloudBase Run!'
         }
-        selectedItem.showItem = !selectedItem.showItem;
+      },
+      success: (res) => {
+        console.log('callContainer success: ', res);
         this.setData({
-          powerList,
+          showTip: true,
+          title: '调用成功',
+          content: JSON.stringify(res.data)
         });
+      },
+      fail: (err) => {
+        console.error('callContainer fail: ', err);
+        this.setData({
+          showTip: true,
+          title: '调用失败',
+          content: JSON.stringify(err)
+        });
+      },
+      complete: () => {
         wx.hideLoading();
-      })
-      .catch((e) => {
+      }
+    });
+  },
+
+  getOpenId() {
+    wx.showLoading({
+      title: '获取中...',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      data: {
+        type: 'getOpenId',
+      },
+      success: (res) => {
+        console.log('云函数调用成功: ', res);
+        this.setData({
+          showTip: true,
+          title: '获取成功',
+          content: JSON.stringify(res.result)
+        });
+      },
+      fail: (err) => {
+        console.error('云函数调用失败: ', err);
+        this.setData({
+          showTip: true,
+          title: '获取失败',
+          content: JSON.stringify(err)
+        });
+      },
+      complete: () => {
         wx.hideLoading();
-        const { errCode, errMsg } = e
-        if (errMsg.includes('Environment not found')) {
+      }
+    });
+  },
+
+  getMiniProgramCode() {
+    wx.showLoading({
+      title: '生成中...',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      data: {
+        type: 'getMiniProgramCode',
+      },
+      success: (res) => {
+        console.log('云函数调用成功: ', res);
+        this.setData({
+          showTip: true,
+          title: '生成成功',
+          content: JSON.stringify(res.result)
+        });
+      },
+      fail: (err) => {
+        console.error('云函数调用失败: ', err);
+        this.setData({
+          showTip: true,
+          title: '生成失败',
+          content: JSON.stringify(err)
+        });
+      },
+      complete: () => {
+        wx.hideLoading();
+      }
+    });
+  },
+
+  createCollection() {
+    const db = wx.cloud.database();
+    db.createCollection('todos').then((res) => {
+      this.setData({
+        haveCreateCollection: true
+      });
+      this.setData({
+        showTip: true,
+        title: '创建成功',
+        content: 'todos 集合创建成功'
+      });
+    }).catch((err) => {
+      console.error('创建失败: ', err);
+      this.setData({
+        showTip: true,
+        title: '创建失败',
+        content: JSON.stringify(err)
+      });
+    });
+  },
+
+  selectRecord() {
+    const db = wx.cloud.database();
+    db.collection('todos').add({
+      data: {
+        description: '学习云开发数据库操作',
+        due: new Date('2020-09-01'),
+        done: false,
+        progress: 0,
+        tags: ['cloud', 'database'],
+        location: 'Guangzhou',
+        addTime: new Date()
+      }
+    }).then((res) => {
+      this.setData({
+        showTip: true,
+        title: '添加成功',
+        content: JSON.stringify(res)
+      });
+    }).catch((err) => {
+      console.error('添加失败: ', err);
+      this.setData({
+        showTip: true,
+        title: '添加失败',
+        content: JSON.stringify(err)
+      });
+    });
+  },
+
+  uploadFile() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+    }).then((res) => {
+      const tempFilePaths = res.tempFilePaths;
+      const uploadTask = wx.cloud.uploadFile({
+        cloudPath: `example_${Date.now()}.png`,
+        filePath: tempFilePaths[0],
+        success: (res) => {
+          console.log('上传成功: ', res);
           this.setData({
             showTip: true,
-            title: "云开发环境未找到",
-            content: "如果已经开通云开发，请检查环境ID与 `miniprogram/app.js` 中的 `env` 参数是否一致。"
+            title: '上传成功',
+            content: JSON.stringify(res)
           });
-          return
-        }
-        if (errMsg.includes('FunctionName parameter could not be found')) {
+        },
+        fail: (err) => {
+          console.error('上传失败: ', err);
           this.setData({
             showTip: true,
-            title: "请上传云函数",
-            content: "在'cloudfunctions/quickstartFunctions'目录右键，选择【上传并部署-云端安装依赖】，等待云函数上传完成后重试。"
+            title: '上传失败',
+            content: JSON.stringify(err)
           });
-          return
         }
       });
+    }).catch((err) => {
+      console.error('选择图片失败: ', err);
+    });
   },
+
+  modelGuide() {
+    wx.showModal({
+      title: 'AI 拓展能力',
+      content: '云开发 AI 拓展能力，支持大模型对话、图像识别等功能。详细使用请参考官方文档。',
+      showCancel: false
+    });
+  }
 });

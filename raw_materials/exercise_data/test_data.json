@@ -1,0 +1,2602 @@
+[
+    {
+        "summarizedActivitiesExport":
+        [
+            {
+                "activityId": 20161383542,
+                "uuidMsb": 1392029143001154269,
+                "uuidLsb": -8878680346861251148,
+                "name": "昌平区 跑步",
+                "activityType": "running",
+                "userProfileId": 133513358,
+                "timeZoneId": 135,
+                "beginTimestamp": 1756035546000,
+                "eventTypeId": 9,
+                "rule": "private",
+                "sportType": "RUNNING",
+                "startTimeGmt": 1.756035546E+12,
+                "startTimeLocal": 1.756064346E+12,
+                "duration": 757426.025390625,
+                "distance": 201509.99755859375,
+                "elevationGain": 0.0,
+                "elevationLoss": 200.0,
+                "avgSpeed": 0.2660000085830689,
+                "maxSpeed": 0.3283999919891358,
+                "avgHr": 153.0,
+                "maxHr": 171.0,
+                "minHr": 97.0,
+                "avgPower": 306.0,
+                "maxPower": 397.0,
+                "avgRunCadence": 84.0,
+                "maxRunCadence": 94.0,
+                "steps": 2142.0,
+                "calories": 712.3033999999999,
+                "bmrCalories": 79.61037999999999,
+                "startLongitude": 116.30854183807969,
+                "startLatitude": 40.07711933925748,
+                "aerobicTrainingEffect": 2.5,
+                "normPower": 306.0,
+                "avgVerticalOscillation": 8.10999984741211,
+                "avgGroundContactTime": 260.29998779296875,
+                "avgStrideLength": 94.10000000000001,
+                "avgFractionalCadence": 0.5234375,
+                "maxFractionalCadence": 0.0,
+                "vO2MaxValue": 50.0,
+                "avgVerticalRatio": 8.630000114440918,
+                "elapsedDuration": 867505.9814453125,
+                "movingDuration": 752000.0,
+                "anaerobicTrainingEffect": 0.0,
+                "deviceId": 3608427318,
+                "minElevation": 4240.000152587891,
+                "maxElevation": 4620.000076293945,
+                "avgDoubleCadence": 169.046875,
+                "maxDoubleCadence": 188.0,
+                "locationName": "昌平区",
+                "summarizedDiveInfo":
+                {},
+                "maxVerticalSpeed": 0.020000076293945315,
+                "manufacturer": "GARMIN",
+                "lapCount": 3,
+                "endLongitude": 116.31927042268217,
+                "endLatitude": 40.08493839763105,
+                "waterEstimated": 210.0,
+                "trainingEffectLabel": "AEROBIC_BASE",
+                "activityTrainingLoad": 42.98225402832031,
+                "aerobicTrainingEffectMessage": "MAINTAINING_AEROBIC_FITNESS_1",
+                "anaerobicTrainingEffectMessage": "NO_ANAEROBIC_BENEFIT_0",
+                "splitSummaries":
+                [
+                    {
+                        "noOfSplits": 1,
+                        "totalAscent": 0.0,
+                        "duration": 757.426025390625,
+                        "type": 3,
+                        "numFalls": 0,
+                        "numClimbSends": 0,
+                        "numClimbsAttempted": 0,
+                        "numClimbsCompleted": 0,
+                        "maxElevationGain": 0.0,
+                        "averageElevationGain": 0.0,
+                        "maxDistance": 2015,
+                        "distance": 2015.0999755859375,
+                        "averageSpeed": 2.6600000858306885,
+                        "maxSpeed": 3.2839999198913574,
+                        "elevationLoss": 2.0
+                    },
+                    {
+                        "noOfSplits": 7,
+                        "totalAscent": 0.0,
+                        "duration": 29.447999954223633,
+                        "type": 18,
+                        "numFalls": 0,
+                        "numClimbSends": 0,
+                        "numClimbsAttempted": 0,
+                        "numClimbsCompleted": 0,
+                        "maxElevationGain": 0.0,
+                        "averageElevationGain": 0.0,
+                        "maxDistance": 19,
+                        "distance": 48.65999984741211,
+                        "averageSpeed": 1.6519999504089355,
+                        "maxSpeed": 2.9019999504089355,
+                        "elevationLoss": 0.0
+                    },
+                    {
+                        "noOfSplits": 3,
+                        "totalAscent": 0.0,
+                        "duration": 2.7990000247955322,
+                        "type": 22,
+                        "numFalls": 0,
+                        "numClimbSends": 0,
+                        "numClimbsAttempted": 0,
+                        "numClimbsCompleted": 0,
+                        "maxElevationGain": 0.0,
+                        "averageElevationGain": 0.0,
+                        "maxDistance": 5,
+                        "distance": 5.360000133514404,
+                        "averageSpeed": 1.9149999618530273,
+                        "maxSpeed": 1.184999942779541,
+                        "elevationLoss": 0.0
+                    },
+                    {
+                        "noOfSplits": 6,
+                        "totalAscent": 0.0,
+                        "duration": 725.14599609375,
+                        "type": 17,
+                        "numFalls": 0,
+                        "numClimbSends": 0,
+                        "numClimbsAttempted": 0,
+                        "numClimbsCompleted": 0,
+                        "maxElevationGain": 0.0,
+                        "averageElevationGain": 0.0,
+                        "maxDistance": 980,
+                        "distance": 1961.0799560546875,
+                        "averageSpeed": 2.7039999961853027,
+                        "maxSpeed": 3.2839999198913574,
+                        "elevationLoss": 2.0
+                    }
+                ],
+                "splits":
+                [
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035546000,
+                        "endTimeGMT": 1756035602000,
+                        "startLatitude": 40.07711933925748,
+                        "startLongitude": 116.30854183807969,
+                        "endLatitude": 40.07779089733958,
+                        "endLongitude": 116.30996642634273,
+                        "messageIndex": 0,
+                        "type": 17,
+                        "startIndex": 0,
+                        "endIndex": 56,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4660.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 80.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 308.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 68000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 91.27999877929688,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 395.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.600000381469727,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 14570.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 281.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 134.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2553999900817871,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 181.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 255.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.25859999656677246,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 4.19002,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 91.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.32279999256134034,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 56346.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 117.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 7.8500000000000005,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 159.234375,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 37.710179999999994,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.0003636377507990057,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 53000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.27490565461932487,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035546000,
+                        "endTimeGMT": 1756036413000,
+                        "startLatitude": 40.07711933925748,
+                        "startLongitude": 116.30854183807969,
+                        "endLatitude": 40.085111148655415,
+                        "endLongitude": 116.3192028645426,
+                        "messageIndex": 1,
+                        "type": 3,
+                        "startIndex": 0,
+                        "endIndex": 759,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4660.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 85.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 306.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 886624.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 94.10000000000001,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 397.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.630000114440918,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 201510.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 306.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 171.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.26610000133514405,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 188.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 260.29998779296875,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2660000085830689,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 79.61037999999999,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 200.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 94.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.3283999919891358,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 757426.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 153.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.00030000000260770325,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.10999984741211,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 169.046875,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 712.3033999999999,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.0007852215139199626,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 751000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.26832223376643644,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035615000,
+                        "endTimeGMT": 1756035615000,
+                        "endLatitude": 40.07779274135828,
+                        "endLongitude": 116.30996491760015,
+                        "messageIndex": 2,
+                        "type": 18,
+                        "startIndex": 0,
+                        "endIndex": 0,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 2000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035621000,
+                        "endTimeGMT": 1756035623000,
+                        "startLatitude": 40.07780003361404,
+                        "startLongitude": 116.31000028923154,
+                        "endLatitude": 40.07781436666846,
+                        "endLongitude": 116.31004949100316,
+                        "messageIndex": 3,
+                        "type": 22,
+                        "startIndex": 57,
+                        "endIndex": 59,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4640.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 136.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 8000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.19149999618530275,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.1184999942779541,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 2799.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 536.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 131.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 132.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 4.19002,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.03930000066757203,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.020000076293945315,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035624000,
+                        "endTimeGMT": 1756035625000,
+                        "startLatitude": 40.07782241329551,
+                        "startLongitude": 116.3100836891681,
+                        "endLatitude": 40.077825766056776,
+                        "endLongitude": 116.3101196475327,
+                        "messageIndex": 4,
+                        "type": 18,
+                        "startIndex": 60,
+                        "endIndex": 61,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4620.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 110.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 2000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2984999895095825,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2193000078201294,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 2000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 597.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 130.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 130.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.20269999504089356,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 1000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.596999979019165,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035626000,
+                        "endTimeGMT": 1756035986000,
+                        "startLatitude": 40.077831633388996,
+                        "startLongitude": 116.31015091203153,
+                        "endLatitude": 40.08049632422626,
+                        "endLongitude": 116.32084102369845,
+                        "messageIndex": 5,
+                        "type": 17,
+                        "startIndex": 62,
+                        "endIndex": 422,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4620.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 87.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 315.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 361000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 94.75999755859375,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 377.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.600000381469727,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 98080.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 317.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 171.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2740000009536743,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 188.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 260.70001220703125,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2717000007629395,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 37.710179999999994,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 100.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 94.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.3144000053405762,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 361000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 156.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.00030000000260770325,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.15,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 173.8125,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 351.96167999999994,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.00022222201029459634,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 360000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.27244444105360244,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756035987000,
+                        "endTimeGMT": 1756036002000,
+                        "startLatitude": 40.08051015436649,
+                        "startLongitude": 116.32083037868142,
+                        "endLatitude": 40.080693047493696,
+                        "endLongitude": 116.3207417819649,
+                        "messageIndex": 6,
+                        "type": 18,
+                        "startIndex": 423,
+                        "endIndex": 438,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4540.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 59.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 239.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 122.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 16001.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 78.70999755859376,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 171.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 7.630000114440918,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.11959999799728394,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 61.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.19029999971389772,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 16001.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 1914.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 140.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 165.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 168.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 5.970000076293946,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 117.6875,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 12.570059999999998,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.15420000553131105,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0026666768391927086,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 15000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.12759999593098958,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036003000,
+                        "endTimeGMT": 1756036066000,
+                        "startLatitude": 40.080715427175164,
+                        "startLongitude": 116.32073767483234,
+                        "endLatitude": 40.08214630186558,
+                        "endLongitude": 116.32008723914623,
+                        "messageIndex": 7,
+                        "type": 17,
+                        "startIndex": 439,
+                        "endIndex": 502,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4580.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 85.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 270.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 71999.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 89.15,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 349.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 9.319999694824219,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 17803.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 296.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 160.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2513000011444092,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 174.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 270.1000061035156,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2803999900817871,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.38004,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 87.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.29300000667572024,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 63490.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 158.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.200000000000001,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 169.953125,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 58.66027999999999,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.0009523845854259674,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 63000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2825872996496776,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036076000,
+                        "endTimeGMT": 1756036076000,
+                        "endLatitude": 40.08215803653002,
+                        "endLongitude": 116.3200718164444,
+                        "messageIndex": 8,
+                        "type": 22,
+                        "startIndex": 0,
+                        "endIndex": 0,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 2000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036087000,
+                        "endTimeGMT": 1756036087000,
+                        "messageIndex": 9,
+                        "type": 18,
+                        "startIndex": 0,
+                        "endIndex": 0,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 11000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036141000,
+                        "endTimeGMT": 1756036141000,
+                        "endLatitude": 40.082370014861226,
+                        "endLongitude": 116.3200353551656,
+                        "messageIndex": 10,
+                        "type": 17,
+                        "startIndex": 0,
+                        "endIndex": 0,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 54000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036142000,
+                        "endTimeGMT": 1756036148000,
+                        "startLatitude": 40.0823834259063,
+                        "startLongitude": 116.32003409788013,
+                        "endLatitude": 40.082514770329,
+                        "endLongitude": 116.31998581811786,
+                        "messageIndex": 11,
+                        "type": 18,
+                        "startIndex": 503,
+                        "endIndex": 509,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4440.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 51.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 47.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 7000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 87.2,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 347.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 7.309999942779541,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 1384.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 133.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 138.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.1722000002861023,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 173.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 255.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.20910000801086426,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 87.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.29019999504089355,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 6619.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 135.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 6.3599998474121096,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 101.140625,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 4.19002,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 5000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.27680000305175784,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036149000,
+                        "endTimeGMT": 1756036303000,
+                        "startLatitude": 40.08253740146756,
+                        "startLongitude": 116.31997492164373,
+                        "endLatitude": 40.08598051965237,
+                        "endLongitude": 116.31842678412795,
+                        "messageIndex": 12,
+                        "type": 17,
+                        "startIndex": 510,
+                        "endIndex": 664,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4440.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 87.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 311.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 167000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 95.82000122070313,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 397.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.59000015258789,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 41293.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 320.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 165.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2775000095367432,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 179.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 257.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.26670000553131107,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 16.76008,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 100.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 90.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.3283999919891358,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 154837.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 152.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.0007000000216066838,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.20999984741211,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 174.828125,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 142.46068,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.0009090918999213678,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 154000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.26813635888037746,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036317000,
+                        "endTimeGMT": 1756036317000,
+                        "endLatitude": 40.08598814718425,
+                        "endLongitude": 116.3184483256191,
+                        "messageIndex": 13,
+                        "type": 22,
+                        "startIndex": 0,
+                        "endIndex": 0,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 2000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036319000,
+                        "endTimeGMT": 1756036323000,
+                        "startLatitude": 40.08601547218859,
+                        "startLongitude": 116.31846492178738,
+                        "endLatitude": 40.08608244359493,
+                        "endLongitude": 116.31853214465082,
+                        "messageIndex": 14,
+                        "type": 18,
+                        "startIndex": 665,
+                        "endIndex": 669,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4300.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 58.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 182.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 115.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 6000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 90.2,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 165.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 6.840000152587891,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.20109999179840088,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 58.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.18660000562667847,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 4828.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 971.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 95.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 164.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 165.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 6.140000152587891,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 115.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 4.19002,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.10429999828338624,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": -0.0010526355944181743,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 2000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.48550000190734866,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    },
+                    {
+                        "startTimeSource": 0,
+                        "endTimeSource": 0,
+                        "startTimeGMT": 1756036324000,
+                        "endTimeGMT": 1756036413000,
+                        "startLatitude": 40.08609493263066,
+                        "startLongitude": 116.31855930201709,
+                        "endLatitude": 40.08503336459398,
+                        "endLongitude": 116.3192287646234,
+                        "messageIndex": 15,
+                        "type": 17,
+                        "startIndex": 670,
+                        "endIndex": 759,
+                        "totalExerciseReps": 0,
+                        "measurements":
+                        [
+                            {
+                                "value": 4260.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "BEGIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 86.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "GAIN_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 306.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_NORMALIZEDPOWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 100000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_ELAPSEDDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 96.92000122070313,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_STRIDE_LENGTH",
+                                "valid": true
+                            },
+                            {
+                                "value": 381.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "MAX_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.6899995803833,
+                                "connectIQ": false,
+                                "unitEnum": "DIMENSIONLESS",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_RATIO",
+                                "valid": true
+                            },
+                            {
+                                "value": 24362.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "SUM_DISTANCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 330.0,
+                                "connectIQ": false,
+                                "unitEnum": "WATT",
+                                "fieldEnum": "WEIGHTED_MEAN_POWER",
+                                "valid": true
+                            },
+                            {
+                                "value": 169.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.2767999887466431,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_GRADE_ADJUSTED_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 179.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 260.70001220703125,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_GROUND_CONTACT_TIME",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.27230000495910645,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.38004,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_BMR_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "LOSS_ELEVATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 90.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "MAX_RUNCADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.3266000032424927,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "MAX_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 89473.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_DURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 162.0,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_HEARTRATE",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 8.40999984741211,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETER",
+                                "fieldEnum": "WEIGHTED_MEAN_VERTICAL_OSCILLATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 172.34375,
+                                "connectIQ": false,
+                                "unitEnum": "BPM",
+                                "fieldEnum": "WEIGHTED_MEAN_DOUBLE_CADENCE",
+                                "valid": true
+                            },
+                            {
+                                "value": 87.99041999999999,
+                                "connectIQ": false,
+                                "unitEnum": "KILOJOULE",
+                                "fieldEnum": "SUM_ENERGY",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.0,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_ELAPSED_DURATION_VERTICAL_SPEED",
+                                "valid": true
+                            },
+                            {
+                                "value": 89000.0,
+                                "connectIQ": false,
+                                "unitEnum": "MILLISECOND",
+                                "fieldEnum": "SUM_MOVINGDURATION",
+                                "valid": true
+                            },
+                            {
+                                "value": 0.27373033159234555,
+                                "connectIQ": false,
+                                "unitEnum": "CENTIMETERS_PER_MILLISECOND",
+                                "fieldEnum": "WEIGHTED_MEAN_MOVINGSPEED",
+                                "valid": true
+                            }
+                        ]
+                    }
+                ],
+                "moderateIntensityMinutes": 1,
+                "vigorousIntensityMinutes": 12,
+                "avgGradeAdjustedSpeed": 0.26610000133514405,
+                "isRunPowerWindDataEnabled": true,
+                "differenceBodyBattery": -2,
+                "workoutFeel": 50,
+                "workoutRpe": 30,
+                "maxLatitude": 40.08617866784334,
+                "maxLongitude": 116.32085770368576,
+                "minLatitude": 40.07680828683078,
+                "minLongitude": 116.30854183807969,
+                "hrTimeInZone_0": 15928,
+                "hrTimeInZone_1": 10001,
+                "hrTimeInZone_2": 135657,
+                "hrTimeInZone_3": 402598,
+                "hrTimeInZone_4": 193198,
+                "hrTimeInZone_5": 0,
+                "hrTimeInZone_6": 0,
+                "powerTimeInZone_0": 51859,
+                "powerTimeInZone_1": 296392,
+                "powerTimeInZone_2": 358153,
+                "powerTimeInZone_3": 47979,
+                "powerTimeInZone_4": 2999,
+                "powerTimeInZone_5": 0,
+                "runPowerWindDataEnabled": true,
+                "decoDive": false,
+                "purposeful": false,
+                "autoCalcCalories": false,
+                "favorite": false,
+                "pr": false,
+                "elevationCorrected": false,
+                "atpActivity": false,
+                "parent": false
+            }
+        ]
+    }
+]

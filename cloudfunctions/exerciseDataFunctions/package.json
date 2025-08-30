@@ -1,0 +1,14 @@
+{
+  "name": "exerciseDataFunctions",
+  "version": "1.0.0",
+  "description": "运动数据云函数，用于处理Garmin等运动设备的数据",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marathon Partner Team",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

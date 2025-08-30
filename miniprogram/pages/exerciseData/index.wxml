@@ -1,0 +1,123 @@
+<view class="container">
+  <view class="header">
+    <text class="title">运动数据管理</text>
+    <text class="subtitle">测试运动数据的插入、查询和管理功能</text>
+  </view>
+
+  <!-- 文本数据插入 -->
+  <view class="section">
+    <view class="section-title">文本数据插入</view>
+    <view class="form">
+      <view class="form-item">
+        <text class="label">数据格式</text>
+        <picker class="picker" range="{{dataFormats}}" value="{{dataFormatIndex}}" bindchange="onDataFormatChange">
+          <view class="picker-text">{{dataFormats[dataFormatIndex]}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="label">运动数据</text>
+        <textarea 
+          class="textarea" 
+          placeholder="请输入或粘贴运动数据（支持JSON格式）" 
+          model:value="{{textData}}"
+          maxlength="10000"
+          show-confirm-bar="{{false}}"
+        ></textarea>
+      </view>
+      <view class="form-item">
+        <text class="label">数据预览</text>
+        <view class="preview-container">
+          <view class="preview-header">
+            <text class="preview-title">解析结果预览</text>
+            <text class="preview-count" wx:if="{{parsedRecords.length > 0}}">共{{parsedRecords.length}}条记录</text>
+          </view>
+          <view class="preview-content" wx:if="{{parsedRecords.length > 0}}">
+            <view class="preview-item" wx:for="{{parsedRecords.slice(0, 3)}}" wx:key="index">
+              <text class="preview-name">{{item.name || '未命名'}}</text>
+              <text class="preview-type">{{item.activityType}}</text>
+              <text class="preview-distance">{{item.distance}}m</text>
+            </view>
+            <view class="preview-more" wx:if="{{parsedRecords.length > 3}}">
+              <text>... 还有{{parsedRecords.length - 3}}条记录</text>
+            </view>
+          </view>
+          <view class="preview-empty" wx:else>
+            <text class="preview-empty-text">暂无数据，请输入或粘贴运动数据</text>
+          </view>
+        </view>
+      </view>
+      <view class="form-item">
+        <text class="label">操作选项</text>
+        <view class="options-container">
+          <view class="option-item">
+            <checkbox value="validate" checked="{{validateData}}" bindchange="onValidateChange" />
+            <text class="option-label">数据验证</text>
+          </view>
+          <view class="option-item">
+            <checkbox value="overwrite" checked="{{overwriteData}}" bindchange="onOverwriteChange" />
+            <text class="option-label">覆盖重复数据</text>
+          </view>
+        </view>
+      </view>
+      <view class="form-actions">
+        <button class="btn btn-info" bindtap="parseTextData">解析数据</button>
+        <button class="btn btn-primary" bindtap="insertTextData" disabled="{{parsedRecords.length === 0}}">插入数据</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据查询 -->
+  <view class="section">
+    <view class="section-title">查询运动记录</view>
+    <view class="form">
+      <view class="form-item">
+        <text class="label">活动类型</text>
+        <picker class="picker" range="{{activityTypes}}" value="{{queryActivityTypeIndex}}" bindchange="onQueryActivityTypeChange">
+          <view class="picker-text">{{queryActivityTypeIndex >= 0 ? activityTypes[queryActivityTypeIndex] : '全部'}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="label">页码</text>
+        <input class="input" type="number" placeholder="请输入页码" model:value="{{queryPage}}" />
+      </view>
+      <view class="form-item">
+        <text class="label">每页数量</text>
+        <input class="input" type="number" placeholder="请输入每页数量" model:value="{{queryPageSize}}" />
+      </view>
+      <button class="btn btn-info" bindtap="queryRecords">查询记录</button>
+    </view>
+  </view>
+
+  <!-- 查询结果 -->
+  <view class="section" wx:if="{{queryResult.length > 0}}">
+    <view class="section-title">查询结果 (共{{queryResult.length}}条)</view>
+    <view class="record-list">
+      <view class="record-item" wx:for="{{queryResult}}" wx:key="_id">
+        <view class="record-header">
+          <text class="record-name">{{item.name}}</text>
+          <text class="record-type">{{item.activityType}}</text>
+        </view>
+        <view class="record-details">
+          <text class="detail">距离: {{item.distance}}m</text>
+          <text class="detail">时长: {{item.duration}}s</text>
+          <text class="detail">心率: {{item.avgHr || 'N/A'}}</text>
+          <text class="detail">卡路里: {{item.calories || 'N/A'}}</text>
+        </view>
+        <view class="record-time">
+          <text class="time">{{item.startTime || item.createdAt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作日志 -->
+  <view class="section" wx:if="{{logs.length > 0}}">
+    <view class="section-title">操作日志</view>
+    <view class="log-list">
+      <view class="log-item" wx:for="{{logs}}" wx:key="index">
+        <text class="log-time">{{item.time}}</text>
+        <text class="log-message">{{item.message}}</text>
+      </view>
+    </view>
+  </view>
+</view>
