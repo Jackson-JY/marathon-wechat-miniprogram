@@ -58,33 +58,38 @@
             <text class="y-label" wx:for="{{hrTrendYAxisLabels}}" wx:key="index">{{item}}</text>
           </view>
           <view class="chart-area">
-            <view class="grid-lines">
-              <view class="grid-line" wx:for="{{hrTrendYAxisLabels}}" wx:key="index"></view>
-            </view>
-            <view class="data-line">
+            <!-- 网格线已隐藏 -->
+            <!-- <view class="grid-lines">
               <view 
-                class="data-point" 
-                wx:for="{{hrTrendData}}" 
-                wx:key="date"
-                style="left: {{item.xPosition}}%; top: {{item.yPosition}}%"
-              >
-                <view class="point-tooltip">
-                  <text class="tooltip-date">{{item.date}}</text>
-                  <text class="tooltip-value">{{item.avgHr}} BPM</text>
+                class="grid-line" 
+                wx:for="{{gridLinePositions}}" 
+                wx:key="index"
+                style="top: {{item}}%"
+              ></view>
+            </view> -->
+            <scroll-view class="unified-scroll" scroll-x="true" show-scrollbar="false" bindscroll="onChartScroll">
+              <view class="chart-content-unified">
+                <!-- 数据点区域 -->
+                <view class="data-line">
+                  <view 
+                    class="data-point" 
+                    wx:for="{{hrTrendData}}" 
+                    wx:key="date"
+                    style="left: {{item.xPosition}}px; top: {{item.yPosition}}%"
+                  >
+                    <view class="point-tooltip">
+                      <text class="tooltip-date">{{item.date}}</text>
+                      <text class="tooltip-value">{{item.avgHr}} BPM</text>
+                    </view>
+                  </view>
+                </view>
+                
+                <!-- x轴标签区域 -->
+                <view class="x-axis-unified">
+                  <text class="x-label" wx:for="{{hrTrendData}}" wx:key="date" style="left: {{item.xPosition}}px">{{item.date}}</text>
                 </view>
               </view>
-              <view class="line-segments">
-                <view 
-                  class="line-segment" 
-                  wx:for="{{hrTrendLineSegments}}" 
-                  wx:key="index"
-                  style="left: {{item.x1}}%; top: {{item.y1}}%; width: {{item.width}}%; transform: rotate({{item.angle}}deg);"
-                ></view>
-              </view>
-            </view>
-          </view>
-          <view class="x-axis">
-            <text class="x-label" wx:for="{{hrTrendData}}" wx:key="date" style="left: {{item.xPosition}}%">{{item.date}}</text>
+            </scroll-view>
           </view>
         </view>
       </view>

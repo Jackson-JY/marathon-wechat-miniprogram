@@ -193,23 +193,59 @@ Page({
     const yAxisMin = 0; // Y轴从0开始
     const yAxisMax = Math.max(200, maxHr + 20); // 确保有足够的显示空间
 
-    // 生成Y轴标签，确保与网格线位置对应
-    // 网格线位置：top: 0% = 最大心率, top: 25% = 75%最大心率, top: 50% = 50%最大心率, top: 75% = 25%最大心率, top: 100% = 0 BPM
+    // 统一坐标系统：确保Y轴标签、网格线、数据点完全一致
+    // 坐标系统定义：top: 0% = 最大心率, top: 100% = 0 BPM
+    // 这是标准的数学坐标系统：Y轴向上为正方向
+    
+    // 生成Y轴标签和网格线位置，确保完全对应
+    // 关键：Y轴标签应该与网格线位置完全对应，而不是按索引均匀分布
     const yLabels = [];
+    const gridLinePositions = [];
+    
+    // 生成5个均匀分布的网格线位置（0%, 25%, 50%, 75%, 100%）
     for (let i = 0; i <= 4; i++) {
-      // 从最大心率开始，递减到0
-      const labelValue = Math.round(yAxisMax - (yAxisMax / 4) * i);
-      yLabels.push(labelValue);
+      const topPosition = (i / 4) * 100; // 0%, 25%, 50%, 75%, 100%
+      gridLinePositions.push(topPosition);
+      
+      // 根据网格线位置计算对应的Y轴标签值
+      // 反向计算：top: 0% = 最大心率, top: 100% = 0 BPM
+      const heartRate = yAxisMax - (topPosition / 100) * yAxisMax;
+      yLabels.push(Math.round(heartRate));
     }
+    
+    // 验证坐标系统一致性
+    console.log('=== 坐标系统统一验证 ===');
+    console.log('Y轴范围:', { maxHr, yAxisMax });
+    console.log('Y轴标签:', yLabels);
+    console.log('网格线位置:', gridLinePositions);
+    console.log('网格线位置对应关系:');
+    for (let i = 0; i < yLabels.length; i++) {
+      console.log(`  - top: ${gridLinePositions[i]}% → 心率: ${yLabels[i]} BPM`);
+      // 验证网格线位置与Y轴标签的一致性
+      const expectedHeartRate = yAxisMax - (gridLinePositions[i] / 100) * yAxisMax;
+      console.log(`  - 验证: top: ${gridLinePositions[i]}% 应该对应心率: ${Math.round(expectedHeartRate)} BPM (实际: ${yLabels[i]} BPM)`);
+    }
+    console.log('========================');
 
-    // 转换为图表数据
+    // 转换为图表数据 - 使用统一的坐标系统
     const trendData = recentData.map((day, index) => {
-      const xPosition = (index / (recentData.length - 1)) * 100;
-      // 使用数学坐标系统：Y轴向上为正方向，心率值越高，Y位置越高
-      // 在CSS中，top: 0%表示顶部，top: 100%表示底部
-      // Y轴标签：top: 0% = 最大心率, top: 100% = 0 BPM
-      // 所以心率越高，top值应该越小（更接近顶部）
+      // 调整x轴位置计算，确保标签不重叠
+      // 使用固定间距而不是百分比，避免标签重叠
+      const xPosition = index * 80 + 40; // 每个标签间隔80px，起始位置40px
+      
+      // 统一坐标系统：确保数据点位置与网格线位置完全一致
+      // 网格线位置：top: 0% = 最大心率, top: 100% = 0 BPM
+      // 数据点位置：心率值应该映射到对应的网格线位置
+      // 使用线性映射：心率从0到yAxisMax，映射到top从100%到0%
       const yPosition = 100 - (day.avgHr / yAxisMax) * 100;
+      
+      // 验证数据点位置与网格线的一致性
+      console.log(`数据点 ${day.date}: 心率=${day.avgHr}, Y位置=${yPosition}%, 网格线对齐验证:`);
+      console.log(`  - 心率=${day.avgHr}, yAxisMax=${yAxisMax}`);
+      console.log(`  - 计算: 100 - (${day.avgHr} / ${yAxisMax}) * 100 = ${yPosition}%`);
+      
+      // 基本的数据点信息输出
+      console.log(`  - 心率: ${day.avgHr} BPM, Y位置: ${yPosition.toFixed(2)}%`);
       
       return {
         date: this.formatDateForDisplay(day.date),
@@ -219,43 +255,39 @@ Page({
       };
     });
 
-    // 生成连接线
-    const segments = [];
-    for (let i = 0; i < trendData.length - 1; i++) {
-      const current = trendData[i];
-      const next = trendData[i + 1];
-      
-      const x1 = current.xPosition;
-      const y1 = current.yPosition;
-      const x2 = next.xPosition;
-      const y2 = next.yPosition;
-      
-      // 计算连接线的长度和角度
-      const deltaX = x2 - x1;
-      const deltaY = y2 - y1;
-      const width = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-      // 计算角度，使用数学坐标系统：Y轴向上为正方向
-      let angle = 0;
-      if (deltaX !== 0) {
-        angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
-      } else if (deltaY > 0) {
-        angle = 90; // 向上
-      } else if (deltaY < 0) {
-        angle = -90; // 向下
-      }
-      
-      segments.push({
-        x1: x1,
-        y1: y1,
-        width: width,
-        angle: angle
-      });
-    }
 
+
+    // 统一坐标系统最终验证
+    console.log('=== 统一坐标系统最终验证 ===');
+    console.log('Y轴范围:', { maxHr, yAxisMax });
+    console.log('Y轴标签:', yLabels);
+    console.log('网格线位置:', gridLinePositions);
+    console.log('网格线位置对应关系:');
+    for (let i = 0; i < yLabels.length; i++) {
+      console.log(`  - top: ${gridLinePositions[i]}% → 心率: ${yLabels[i]} BPM`);
+    }
+    
+
+    
+    console.log('数据点位置验证:');
+    trendData.forEach((point, index) => {
+      console.log(`  - 数据点${index}: 心率=${point.avgHr}, Y位置=${point.yPosition}%`);
+    });
+    
+    // 简化的网格线信息输出
+    console.log('网格线信息:');
+    for (let i = 0; i < yLabels.length; i++) {
+      console.log(`  - 网格线${i}: 位置${gridLinePositions[i]}%, 心率${yLabels[i]} BPM`);
+    }
+    
+    console.log('=== 坐标系统信息 ===');
+    console.log('✓ 使用统一坐标系统: top: 0% = 最大心率, top: 100% = 0 BPM');
+    console.log('========================');
+    
     this.setData({
       hrTrendData: trendData,
       hrTrendYAxisLabels: yLabels,
-      hrTrendLineSegments: segments
+      gridLinePositions: gridLinePositions
     });
   },
 
@@ -265,6 +297,13 @@ Page({
     const month = date.getMonth() + 1;
     const day = date.getDate();
     return `${month}/${day}`;
+  },
+
+  // 图表滑动事件处理
+  onChartScroll(e) {
+    // 可以在这里添加滑动相关的逻辑
+    // 例如记录滑动位置、触发其他事件等
+    console.log('图表滑动:', e.detail);
   },
 
   // 处理个人最佳记录
