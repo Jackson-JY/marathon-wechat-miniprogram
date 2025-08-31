@@ -1,0 +1,164 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">运动数据可视化</text>
+    <text class="subtitle">直观展示您的运动数据和趋势分析</text>
+  </view>
+
+  <!-- 数据概览卡片 -->
+  <view class="overview-section">
+    <view class="overview-grid">
+      <view class="overview-card primary">
+        <view class="overview-icon">🏃‍♂️</view>
+        <view class="overview-content">
+          <text class="overview-value">{{totalActivities}}</text>
+          <text class="overview-label">总活动数</text>
+        </view>
+      </view>
+      <view class="overview-card success">
+        <view class="overview-icon">📏</view>
+        <view class="overview-content">
+          <text class="overview-value">{{totalDistance}}km</text>
+          <text class="overview-label">总距离</text>
+        </view>
+      </view>
+      <view class="overview-card warning">
+        <view class="overview-icon">⏱️</view>
+        <view class="overview-content">
+          <text class="overview-value">{{totalDuration}}h</text>
+          <text class="overview-label">总时长</text>
+        </view>
+      </view>
+      <view class="overview-card info">
+        <view class="overview-icon">🔥</view>
+        <view class="overview-content">
+          <text class="overview-value">{{totalCalories}}k</text>
+          <text class="overview-label">总卡路里</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 心率趋势图 -->
+  <view class="section">
+    <view class="section-title">
+      <text class="title-text">心率趋势</text>
+      <text class="title-subtitle">平均心率变化趋势</text>
+    </view>
+    <view class="chart-container">
+      <view class="hr-trend-chart">
+        <view class="chart-placeholder" wx:if="{{!hrTrendData.length}}">
+          <view class="placeholder-icon">📈</view>
+          <text class="placeholder-text">暂无心率趋势数据</text>
+        </view>
+        <view class="chart-content" wx:else>
+          <view class="y-axis">
+            <text class="y-label" wx:for="{{hrTrendYAxisLabels}}" wx:key="index">{{item}}</text>
+          </view>
+          <view class="chart-area">
+            <view class="grid-lines">
+              <view class="grid-line" wx:for="{{hrTrendYAxisLabels}}" wx:key="index"></view>
+            </view>
+            <view class="data-line">
+              <view 
+                class="data-point" 
+                wx:for="{{hrTrendData}}" 
+                wx:key="date"
+                style="left: {{item.xPosition}}%; top: {{item.yPosition}}%"
+              >
+                <view class="point-tooltip">
+                  <text class="tooltip-date">{{item.date}}</text>
+                  <text class="tooltip-value">{{item.avgHr}} BPM</text>
+                </view>
+              </view>
+              <view class="line-segments">
+                <view 
+                  class="line-segment" 
+                  wx:for="{{hrTrendLineSegments}}" 
+                  wx:key="index"
+                  style="left: {{item.x1}}%; top: {{item.y1}}%; width: {{item.width}}%; transform: rotate({{item.angle}}deg);"
+                ></view>
+              </view>
+            </view>
+          </view>
+          <view class="x-axis">
+            <text class="x-label" wx:for="{{hrTrendData}}" wx:key="date" style="left: {{item.xPosition}}%">{{item.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 个人最佳记录 -->
+  <view class="section">
+    <view class="section-title">
+      <text class="title-text">个人最佳记录</text>
+      <text class="title-subtitle">您的运动里程碑</text>
+    </view>
+    <view class="records-grid">
+      <view class="record-card" wx:for="{{personalBests}}" wx:key="type">
+        <view class="record-icon">{{item.icon}}</view>
+        <view class="record-content">
+          <text class="record-title">{{item.title}}</text>
+          <text class="record-value">{{item.value}}</text>
+          <text class="record-date">{{item.date}}</text>
+        </view>
+        <view class="record-badge">
+          <text class="badge-text">PB</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据筛选器 -->
+  <view class="section">
+    <view class="section-title">
+      <text class="title-text">数据筛选</text>
+      <text class="title-subtitle">自定义数据范围</text>
+    </view>
+    <view class="filter-form">
+      <view class="filter-row">
+        <view class="filter-item">
+          <text class="filter-label">时间范围</text>
+          <picker class="filter-picker" range="{{timeRanges}}" value="{{timeRangeIndex}}" bindchange="onTimeRangeChange">
+            <view class="picker-text">{{timeRanges[timeRangeIndex]}}</view>
+          </picker>
+        </view>
+        <view class="filter-item">
+          <text class="filter-label">活动类型</text>
+          <picker class="filter-picker" range="{{filterActivityTypes}}" value="{{filterActivityTypeIndex}}" bindchange="onFilterActivityTypeChange">
+            <view class="picker-text">{{filterActivityTypeIndex >= 0 ? filterActivityTypes[filterActivityTypeIndex] : '全部'}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="filter-actions">
+        <button class="btn btn-secondary" bindtap="resetFilters">重置筛选</button>
+        <button class="btn btn-primary" bindtap="applyFilters">应用筛选</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据导出 -->
+  <view class="section">
+    <view class="section-title">
+      <text class="title-text">数据导出</text>
+      <text class="title-subtitle">导出分析报告</text>
+    </view>
+    <view class="export-options">
+      <button class="btn btn-outline" bindtap="exportChartImage">
+        <text class="btn-icon">📷</text>
+        <text class="btn-text">导出图表图片</text>
+      </button>
+      <button class="btn btn-outline" bindtap="exportDataReport">
+        <text class="btn-icon">📊</text>
+        <text class="btn-text">导出数据报告</text>
+      </button>
+      <button class="btn btn-outline" bindtap="shareVisualization">
+        <text class="btn-icon">📤</text>
+        <text class="btn-text">分享可视化</text>
+      </button>
+    </view>
+  </view>
+</view>

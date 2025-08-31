@@ -856,6 +856,104 @@ Page({
     this.addLog('文件数据已清空');
   },
 
+  // 插入测试数据
+  async insertTestData() {
+    wx.showLoading({ title: '插入测试数据中...' });
+    
+    try {
+      // 生成测试数据
+      const testRecords = this.generateTestData();
+      
+      const result = await wx.cloud.callFunction({
+        name: 'exerciseDataFunctions',
+        data: {
+          type: 'batchInsertExerciseRecords',
+          data: testRecords
+        }
+      });
+
+      if (result.result.success) {
+        wx.showToast({
+          title: `成功插入${result.result.data.insertedCount}条测试数据`,
+          icon: 'success'
+        });
+        this.addLog(`成功插入测试数据: ${result.result.data.insertedCount}条记录`);
+      } else {
+        throw new Error(result.result.errMsg);
+      }
+    } catch (error) {
+      console.error('插入测试数据失败:', error);
+      wx.showToast({
+        title: '插入失败: ' + error.message,
+        icon: 'none'
+      });
+      this.addLog(`测试数据插入失败: ${error.message}`);
+    } finally {
+      wx.hideLoading();
+    }
+  },
+
+  // 生成测试数据
+  generateTestData() {
+    const testRecords = [];
+    const now = new Date();
+    
+    // 生成最近6个月的数据
+    for (let i = 0; i < 30; i++) {
+      const date = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+      const activityTypes = ['running', 'cycling', 'swimming', 'hiking', 'fitness'];
+      const activityType = activityTypes[Math.floor(Math.random() * activityTypes.length)];
+      
+      let distance, duration, calories, avgHr;
+      
+      switch (activityType) {
+        case 'running':
+          distance = Math.floor(Math.random() * 20000) + 5000; // 5-25km
+          duration = Math.floor(Math.random() * 7200) + 1800; // 30-150分钟
+          calories = Math.floor(distance / 1000 * 60) + Math.floor(Math.random() * 200);
+          avgHr = Math.floor(Math.random() * 60) + 140; // 140-200 BPM
+          break;
+        case 'cycling':
+          distance = Math.floor(Math.random() * 50000) + 10000; // 10-60km
+          duration = Math.floor(Math.random() * 10800) + 3600; // 60-240分钟
+          calories = Math.floor(distance / 1000 * 30) + Math.floor(Math.random() * 150);
+          avgHr = Math.floor(Math.random() * 50) + 120; // 120-170 BPM
+          break;
+        case 'swimming':
+          distance = Math.floor(Math.random() * 5000) + 1000; // 1-6km
+          duration = Math.floor(Math.random() * 3600) + 1200; // 20-80分钟
+          calories = Math.floor(distance / 1000 * 400) + Math.floor(Math.random() * 100);
+          avgHr = Math.floor(Math.random() * 40) + 130; // 130-170 BPM
+          break;
+        case 'hiking':
+          distance = Math.floor(Math.random() * 15000) + 3000; // 3-18km
+          duration = Math.floor(Math.random() * 7200) + 1800; // 30-150分钟
+          calories = Math.floor(distance / 1000 * 80) + Math.floor(Math.random() * 100);
+          avgHr = Math.floor(Math.random() * 30) + 110; // 110-140 BPM
+          break;
+        case 'fitness':
+          distance = 0;
+          duration = Math.floor(Math.random() * 3600) + 1800; // 30-90分钟
+          calories = Math.floor(duration / 60 * 8) + Math.floor(Math.random() * 100);
+          avgHr = Math.floor(Math.random() * 40) + 120; // 120-160 BPM
+          break;
+      }
+      
+      testRecords.push({
+        name: `${this.getActivityTypeDisplayName(activityType)}训练${i + 1}`,
+        activityType: activityType,
+        distance: distance,
+        duration: duration,
+        calories: calories,
+        avgHr: avgHr,
+        startTime: date.toISOString(),
+        description: `这是第${i + 1}次${this.getActivityTypeDisplayName(activityType)}训练`
+      });
+    }
+    
+    return testRecords;
+  },
+
   // 计算是否显示进度条
   updateProgressBar(progress) {
     const showProgressBar = progress > 0 && progress < 100;

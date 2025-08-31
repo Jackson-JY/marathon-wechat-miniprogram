@@ -68,6 +68,12 @@
         <view class="feature-title">运动数据</view>
         <view class="feature-desc">管理Garmin等运动数据</view>
       </view>
+      
+      <view class="feature-card" bindtap="navigateToExerciseVisualization">
+        <view class="feature-icon">📈</view>
+        <view class="feature-title">数据可视化</view>
+        <view class="feature-desc">图表展示运动趋势</view>
+      </view>
     </view>
   </view>
 

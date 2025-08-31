@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/example/index",
-    "pages/exerciseData/index"
+    "pages/exerciseData/index",
+    "pages/exerciseVisualization/index"
   ],
   "window": {
     "backgroundColor": "#667eea",

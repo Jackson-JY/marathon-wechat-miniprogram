@@ -335,6 +335,17 @@ const getExerciseStats = async (event) => {
       })
       .end();
     
+    // 获取个人最佳记录
+    const personalBests = await getPersonalBests(wxContext.OPENID, whereCondition);
+    
+    // 处理类型分布数据
+    const typeDistributionMap = {};
+    if (typeDistribution.list && typeDistribution.list.length > 0) {
+      typeDistribution.list.forEach(item => {
+        typeDistributionMap[item._id] = item.count;
+      });
+    }
+    
     return {
       success: true,
       data: {
@@ -342,7 +353,8 @@ const getExerciseStats = async (event) => {
         totalDistance: distanceResult.list[0]?.totalDistance || 0,
         totalDuration: distanceResult.list[0]?.totalDuration || 0,
         totalCalories: distanceResult.list[0]?.totalCalories || 0,
-        typeDistribution: typeDistribution.list
+        typeDistribution: typeDistributionMap,
+        personalBests: personalBests
       }
     };
   } catch (e) {
@@ -350,6 +362,102 @@ const getExerciseStats = async (event) => {
       success: false,
       errMsg: e.message
     };
+  }
+};
+
+// 获取个人最佳记录
+const getPersonalBests = async (openid, whereCondition) => {
+  try {
+    // 最长距离
+    const longestDistanceResult = await db.collection("exercise_records")
+      .where(whereCondition)
+      .orderBy('distance', 'desc')
+      .limit(1)
+      .get();
+
+    // 最长时间
+    const longestDurationResult = await db.collection("exercise_records")
+      .where(whereCondition)
+      .orderBy('duration', 'desc')
+      .limit(1)
+      .get();
+
+    // 最快配速（如果有配速数据）
+    const fastestPaceResult = await db.collection("exercise_records")
+      .where({
+        ...whereCondition,
+        pace: db.command.exists(true)
+      })
+      .orderBy('pace', 'asc')
+      .limit(1)
+      .get();
+
+    // 单次最高卡路里
+    const highestCaloriesResult = await db.collection("exercise_records")
+      .where({
+        ...whereCondition,
+        calories: db.command.exists(true)
+      })
+      .orderBy('calories', 'desc')
+      .limit(1)
+      .get();
+
+    const personalBests = {};
+
+    if (longestDistanceResult.data.length > 0) {
+      const record = longestDistanceResult.data[0];
+      personalBests.longestDistance = record.distance;
+      personalBests.longestDistanceDate = formatDate(record.startTime || record.createdAt);
+    }
+
+    if (longestDurationResult.data.length > 0) {
+      const record = longestDurationResult.data[0];
+      personalBests.longestDuration = record.duration;
+      personalBests.longestDurationDate = formatDate(record.startTime || record.createdAt);
+    }
+
+    if (fastestPaceResult.data.length > 0) {
+      const record = fastestPaceResult.data[0];
+      personalBests.fastestPace = record.pace;
+      personalBests.fastestPaceDate = formatDate(record.startTime || record.createdAt);
+    }
+
+    if (highestCaloriesResult.data.length > 0) {
+      const record = highestCaloriesResult.data[0];
+      personalBests.highestCalories = record.calories;
+      personalBests.highestCaloriesDate = formatDate(record.startTime || record.createdAt);
+    }
+
+    return personalBests;
+  } catch (error) {
+    console.error('获取个人最佳记录失败:', error);
+    return {};
+  }
+};
+
+// 格式化日期
+const formatDate = (dateString) => {
+  if (!dateString) return '暂无';
+  
+  try {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 1) {
+      return '昨天';
+    } else if (diffDays <= 7) {
+      return `${diffDays}天前`;
+    } else if (diffDays <= 30) {
+      return `${Math.floor(diffDays / 7)}周前`;
+    } else if (diffDays <= 365) {
+      return `${Math.floor(diffDays / 30)}个月前`;
+    } else {
+      return `${Math.floor(diffDays / 365)}年前`;
+    }
+  } catch (error) {
+    return '暂无';
   }
 };
 

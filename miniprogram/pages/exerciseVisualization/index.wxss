@@ -1,0 +1,547 @@
+/* index.wxss */
+.container {
+  padding: 2rpx; /* 减少左右边距，让section更宽 */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 28rpx;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+/* 数据概览卡片 */
+.overview-section {
+  margin-bottom: 40rpx;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25rpx; /* 增加卡片间距，适应更宽的布局 */
+}
+
+.overview-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 25rpx; /* 减少内部padding，让卡片内容更紧凑 */
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.overview-card:active {
+  transform: scale(0.98);
+}
+
+.overview-card.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.overview-card.success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.overview-card.warning {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.overview-card.info {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.overview-icon {
+  font-size: 48rpx;
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.overview-content {
+  flex: 1;
+}
+
+.overview-value {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-bottom: 8rpx;
+}
+
+.overview-label {
+  display: block;
+  font-size: 24rpx;
+  opacity: 0.9;
+}
+
+/* 通用区块样式 */
+.section {
+  background: white;
+  border-radius: 20rpx;
+  padding: 20rpx; 
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+  width: 80%;
+}
+
+.section-title {
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.title-text {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+}
+
+.title-subtitle {
+  display: block;
+  font-size: 24rpx;
+  color: #7f8c8d;
+}
+
+/* 图表容器 */
+.chart-container {
+  position: relative;
+  padding: 0; /* 移除左右边距，让图表充分利用section宽度 */
+}
+
+.chart-placeholder {
+  text-align: center;
+  padding: 60rpx 20rpx;
+  color: #bdc3c7;
+}
+
+.placeholder-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.placeholder-text {
+  font-size: 28rpx;
+}
+
+/* 饼图样式 */
+.pie-chart {
+  position: relative;
+  width: 400rpx; /* 增加饼图宽度 */
+  height: 400rpx; /* 增加饼图高度 */
+  margin: 0 auto 40rpx;
+}
+
+.pie-slices {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pie-slice {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  transform-origin: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slice-label {
+  position: absolute;
+  left: 60%;
+  top: 20%;
+  font-size: 20rpx;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+
+/* 图例样式 */
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding: 0 10rpx; /* 减少图例边距，适应更宽的布局 */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.legend-color {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+}
+
+.legend-text {
+  flex: 1;
+  font-size: 26rpx;
+  color: #2c3e50;
+}
+
+.legend-value {
+  font-size: 24rpx;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+/* 心率趋势图样式 */
+.hr-trend-chart {
+  position: relative;
+  height: 450rpx;
+  width: 100%;
+  overflow: visible;
+}
+
+.hr-trend-chart .chart-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.hr-trend-chart .y-axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hr-trend-chart .y-label {
+  font-size: 20rpx;
+  color: #7f8c8d;
+  text-align: right;
+  padding-right: 10rpx;
+}
+
+.hr-trend-chart .chart-area {
+  position: relative;
+  margin-left: 50rpx;
+  height: 100%;
+}
+
+.hr-trend-chart .grid-lines {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.hr-trend-chart .grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: #e0e0e0;
+}
+
+.hr-trend-chart .grid-line:nth-child(1) { top: 0%; }    /* 对应Y轴标签 最大心率 */
+.hr-trend-chart .grid-line:nth-child(2) { top: 25%; }   /* 对应Y轴标签 75%最大心率 */
+.hr-trend-chart .grid-line:nth-child(3) { top: 50%; }   /* 对应Y轴标签 50%最大心率 */
+.hr-trend-chart .grid-line:nth-child(4) { top: 75%; }   /* 对应Y轴标签 25%最大心率 */
+.hr-trend-chart .grid-line:nth-child(5) { top: 100%; }  /* 对应Y轴标签 0 BPM */
+
+.hr-trend-chart .data-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.hr-trend-chart .data-point {
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  background: #e74c3c;
+  border-radius: 50%;
+  border: 3rpx solid white;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hr-trend-chart .data-point:active {
+  transform: translate(-50%, 50%) scale(1.2);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.3);
+}
+
+.hr-trend-chart .point-tooltip {
+  position: absolute;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8rpx 12rpx;
+  border-radius: 8rpx;
+  font-size: 18rpx;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.hr-trend-chart .data-point:active .point-tooltip {
+  opacity: 1;
+}
+
+.hr-trend-chart .tooltip-date {
+  display: block;
+  font-size: 16rpx;
+  margin-bottom: 4rpx;
+}
+
+.hr-trend-chart .tooltip-value {
+  display: block;
+  font-size: 18rpx;
+  font-weight: 600;
+}
+
+.hr-trend-chart .line-segments {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none; /* 避免遮挡数据点的交互 */
+}
+
+.hr-trend-chart .line-segment {
+  position: absolute;
+  height: 3rpx;
+  background: #e74c3c;
+  transform-origin: left center;
+  /* 连接线的基础样式 */
+  border-radius: 2rpx;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.2);
+  /* 确保连接线正确显示 */
+  z-index: 1;
+}
+
+.hr-trend-chart .x-axis {
+  position: absolute;
+  bottom: -40rpx;
+  left: 50rpx;
+  right: 0;
+  height: 40rpx;
+}
+
+.hr-trend-chart .x-label {
+  position: absolute;
+  font-size: 18rpx;
+  color: #7f8c8d;
+  text-align: center;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  min-width: 60rpx;
+}
+
+/* 个人最佳记录 */
+.records-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+.record-card {
+  background: #f8f9fa;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.record-icon {
+  font-size: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.record-content {
+  flex: 1;
+}
+
+.record-title {
+  display: block;
+  font-size: 24rpx;
+  color: #7f8c8d;
+  margin-bottom: 8rpx;
+}
+
+.record-value {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4rpx;
+}
+
+.record-date {
+  display: block;
+  font-size: 20rpx;
+  color: #95a5a6;
+}
+
+.record-badge {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  background: #e74c3c;
+  color: white;
+  padding: 4rpx 8rpx;
+  border-radius: 12rpx;
+  font-size: 18rpx;
+  font-weight: 600;
+}
+
+/* 筛选器样式 */
+.filter-form {
+  padding: 20rpx 0;
+}
+
+.filter-row {
+  display: flex;
+  gap: 30rpx; /* 增加筛选器之间的间距，适应更宽的布局 */
+  margin-bottom: 30rpx;
+}
+
+.filter-item {
+  flex: 1;
+}
+
+.filter-label {
+  display: block;
+  font-size: 26rpx;
+  color: #2c3e50;
+  margin-bottom: 16rpx;
+  font-weight: 500;
+}
+
+.filter-picker {
+  background: #f8f9fa;
+  border-radius: 12rpx;
+  padding: 25rpx; /* 增加内部padding，让选择器更舒适 */
+  border: 2rpx solid #e0e0e0;
+}
+
+.picker-text {
+  font-size: 26rpx;
+  color: #2c3e50;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 25rpx; /* 增加按钮之间的间距，适应更宽的布局 */
+}
+
+/* 导出选项 */
+.export-options {
+  display: flex;
+  flex-direction: column;
+  gap: 25rpx; /* 增加导出选项之间的间距，适应更宽的布局 */
+}
+
+/* 按钮样式 */
+.btn {
+  padding: 20rpx 32rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-secondary {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.btn-outline {
+  background: white;
+  color: #667eea;
+  border: 2rpx solid #667eea;
+}
+
+.btn-icon {
+  margin-right: 12rpx;
+}
+
+.btn-text {
+  font-size: 26rpx;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .records-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-row {
+    flex-direction: column;
+  }
+}

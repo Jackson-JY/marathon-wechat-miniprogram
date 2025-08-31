@@ -230,6 +230,13 @@ Page({
     });
   },
 
+  // 导航到运动数据可视化页面
+  navigateToExerciseVisualization() {
+    wx.navigateTo({
+      url: '/pages/exerciseVisualization/index'
+    });
+  },
+
   // 开始跑步
   startRunning() {
     wx.showToast({
