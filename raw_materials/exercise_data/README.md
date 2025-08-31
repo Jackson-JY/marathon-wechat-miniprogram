@@ -10,6 +10,7 @@
 - `data_summary.md` - 数据统计摘要
 - `cloud_integration_guide.md` - 云服务集成指南
 - `text_input_examples.md` - 文本数据输入示例指南
+- `file_upload_guide.md` - 文件上传导入功能指南
 - `README.md` - 本说明文件
 
 ## 数据来源
@@ -43,3 +44,6 @@ JSON Schema格式的数据结构定义，可用于数据验证和API文档生成
 
 ### text_input_examples.md
 文本数据输入示例指南，提供各种数据格式的输入示例和使用说明。
+
+### file_upload_guide.md
+文件上传导入功能指南，详细介绍如何通过文件上传方式导入运动数据。

@@ -1,7 +1,77 @@
+<!--index.wxml-->
 <view class="container">
   <view class="header">
     <text class="title">运动数据管理</text>
     <text class="subtitle">测试运动数据的插入、查询和管理功能</text>
+  </view>
+
+  <!-- 文件上传导入 -->
+  <view class="section">
+    <view class="section-title">文件上传导入</view>
+    <view class="form">
+      <view class="form-item">
+        <text class="label">支持格式</text>
+        <view class="format-tags">
+          <text class="format-tag">JSON</text>
+          <text class="format-tag">CSV</text>
+          <text class="format-tag">TXT</text>
+          <text class="format-tag">Garmin</text>
+        </view>
+      </view>
+      <view class="form-item">
+        <text class="label">选择文件</text>
+        <view class="file-upload-area" bindtap="chooseFile">
+          <view class="upload-icon">📁</view>
+          <view class="upload-text">
+            <text class="upload-title">点击选择文件</text>
+            <text class="upload-hint">支持最大10MB，建议使用UTF-8编码</text>
+          </view>
+        </view>
+      </view>
+      <view class="form-item" wx:if="{{selectedFile}}">
+        <text class="label">文件信息</text>
+        <view class="file-info">
+          <view class="file-name">{{selectedFile.name}}</view>
+          <view class="file-size">{{selectedFile.size}}KB</view>
+          <view class="file-type">{{selectedFile.type}}</view>
+        </view>
+      </view>
+      <view class="form-item" wx:if="{{showProgressBar}}">
+        <text class="label">上传进度</text>
+        <view class="progress-bar">
+          <view class="progress-fill" style="width: {{uploadProgress}}%"></view>
+        </view>
+        <text class="progress-text">{{uploadProgress}}%</text>
+      </view>
+      <view class="form-item" wx:if="{{fileContent}}">
+        <text class="label">文件内容预览</text>
+        <view class="file-preview">
+          <text class="preview-text">{{fileContent.substring(0, 200)}}{{fileContent.length > 200 ? '...' : ''}}</text>
+        </view>
+      </view>
+      <view class="form-item">
+        <text class="label">解析选项</text>
+        <view class="options-container">
+          <view class="option-item">
+            <checkbox value="validate" checked="{{validateData}}" bindchange="onValidateChange" />
+            <text class="option-label">数据验证</text>
+          </view>
+          <view class="option-item">
+            <checkbox value="overwrite" checked="{{overwriteData}}" bindchange="onOverwriteChange" />
+            <text class="option-label">覆盖重复数据</text>
+          </view>
+          <view class="option-item">
+            <checkbox value="autoParse" checked="{{autoParse}}" bindchange="onAutoParseChange" />
+            <text class="option-label">自动解析</text>
+          </view>
+        </view>
+      </view>
+      <view class="form-actions">
+        <button class="btn btn-info" bindtap="parseFileData" disabled="{{!fileContent}}">解析文件</button>
+        <button class="btn btn-primary" bindtap="insertFileData" disabled="{{parsedRecords.length === 0}}">插入数据</button>
+        <button class="btn btn-secondary" bindtap="clearFileData">清空文件</button>
+      </view>
+    </view>
   </view>
 
   <!-- 文本数据插入 -->

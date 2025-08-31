@@ -26,7 +26,14 @@ Page({
     dataFormatIndex: 0,
     parsedRecords: [],
     validateData: true,
-    overwriteData: false
+    overwriteData: false,
+    
+    // 文件上传相关
+    selectedFile: null,
+    fileContent: '',
+    uploadProgress: 0,
+    autoParse: true,
+    showProgressBar: false
   },
 
   onLoad() {
@@ -589,5 +596,272 @@ Page({
     } finally {
       wx.hideLoading();
     }
+  },
+
+  // 自动解析选项变化
+  onAutoParseChange(e) {
+    this.setData({
+      autoParse: e.detail.value.includes('autoParse')
+    });
+  },
+
+  // 选择文件
+  chooseFile() {
+    wx.chooseMessageFile({
+      count: 1,
+      type: 'file',
+      extension: ['json', 'csv', 'txt'],
+      success: (res) => {
+        const file = res.tempFiles[0];
+        this.setData({
+          selectedFile: {
+            name: file.name,
+            size: Math.round(file.size / 1024), // 转换为KB
+            type: this.getFileType(file.name),
+            path: file.path
+          }
+        });
+        
+        this.addLog(`选择文件: ${file.name} (${Math.round(file.size / 1024)}KB)`);
+        
+        // 如果启用了自动解析，自动读取文件内容
+        if (this.data.autoParse) {
+          this.readFileContent(file.path);
+        }
+      },
+      fail: (error) => {
+        console.error('选择文件失败:', error);
+        wx.showToast({
+          title: '选择文件失败',
+          icon: 'none'
+        });
+      }
+    });
+  },
+
+  // 获取文件类型
+  getFileType(fileName) {
+    const extension = fileName.split('.').pop().toLowerCase();
+    switch (extension) {
+      case 'json':
+        return 'JSON文件';
+      case 'csv':
+        return 'CSV文件';
+      case 'txt':
+        return '文本文件';
+      default:
+        return '未知文件';
+    }
+  },
+
+  // 读取文件内容
+  readFileContent(filePath) {
+    wx.showLoading({ title: '读取文件中...' });
+    
+    // 显示进度条
+    this.updateProgressBar(25);
+    
+    // 使用微信小程序的fs API读取文件
+    const fs = wx.getFileSystemManager();
+    
+    fs.readFile({
+      filePath: filePath,
+      encoding: 'utf8',
+      success: (res) => {
+        const content = res.data;
+        
+        // 检查文件大小限制
+        if (content.length > 1024 * 1024 * 10) { // 10MB
+          wx.showToast({
+            title: '文件过大，请选择小于10MB的文件',
+            icon: 'none'
+          });
+          this.updateProgressBar(0);
+          return;
+        }
+        
+        // 更新进度到75%
+        this.updateProgressBar(75);
+        
+        // 模拟处理时间
+        setTimeout(() => {
+          this.setData({
+            fileContent: content
+          });
+          
+          // 完成进度
+          this.updateProgressBar(100);
+          
+          this.addLog(`文件读取成功: ${content.length}字符`);
+          
+          // 如果启用了自动解析，自动解析数据
+          if (this.data.autoParse) {
+            setTimeout(() => {
+              this.parseFileData();
+            }, 500);
+          }
+          
+          wx.hideLoading();
+        }, 300);
+      },
+      fail: (error) => {
+        console.error('读取文件失败:', error);
+        this.updateProgressBar(0);
+        wx.hideLoading();
+        wx.showToast({
+          title: '读取文件失败: ' + error.errMsg,
+          icon: 'none'
+        });
+      }
+    });
+  },
+
+  // 解析文件数据
+  parseFileData() {
+    const { fileContent, validateData } = this.data;
+    
+    if (!fileContent) {
+      wx.showToast({
+        title: '没有文件内容可解析',
+        icon: 'none'
+      });
+      return;
+    }
+
+    wx.showLoading({ title: '解析文件中...' });
+
+    try {
+      let records = [];
+      const fileName = this.data.selectedFile.name.toLowerCase();
+      
+      // 根据文件扩展名自动判断格式
+      if (fileName.endsWith('.json')) {
+        if (fileContent.includes('summarizedActivitiesExport')) {
+          records = this.parseGarminData(fileContent);
+        } else {
+          records = this.parseStandardJson(fileContent);
+        }
+      } else if (fileName.endsWith('.csv')) {
+        records = this.parseCsvData(fileContent);
+      } else if (fileName.endsWith('.txt')) {
+        // 尝试自动识别格式
+        if (fileContent.trim().startsWith('{') || fileContent.trim().startsWith('[')) {
+          records = this.parseStandardJson(fileContent);
+        } else if (fileContent.includes(',')) {
+          records = this.parseCsvData(fileContent);
+        } else {
+          throw new Error('无法识别的文本格式');
+        }
+      } else {
+        // 尝试自动识别格式
+        records = this.parseCustomData(fileContent);
+      }
+
+      // 数据验证
+      if (validateData) {
+        const validation = this.validateExerciseRecords(records);
+        if (validation.invalid > 0) {
+          wx.showModal({
+            title: '数据验证警告',
+            content: `发现${validation.invalid}条无效数据，是否继续？`,
+            success: (res) => {
+              if (res.confirm) {
+                this.setData({ parsedRecords: records });
+                this.addLog(`文件解析成功: ${records.length}条记录，${validation.invalid}条无效`);
+              }
+            }
+          });
+          wx.hideLoading();
+          return;
+        }
+      }
+
+      this.setData({ parsedRecords: records });
+      this.addLog(`文件解析成功: ${records.length}条记录`);
+      
+      wx.showToast({
+        title: `解析成功: ${records.length}条记录`,
+        icon: 'success'
+      });
+
+    } catch (error) {
+      console.error('解析文件失败:', error);
+      wx.showToast({
+        title: '解析失败: ' + error.message,
+        icon: 'none'
+      });
+      this.addLog(`文件解析失败: ${error.message}`);
+    } finally {
+      wx.hideLoading();
+    }
+  },
+
+  // 插入文件数据
+  async insertFileData() {
+    const { parsedRecords, overwriteData } = this.data;
+    
+    if (parsedRecords.length === 0) {
+      wx.showToast({
+        title: '没有可插入的数据',
+        icon: 'none'
+      });
+      return;
+    }
+
+    wx.showLoading({ title: '插入数据中...' });
+
+    try {
+      const result = await wx.cloud.callFunction({
+        name: 'exerciseDataFunctions',
+        data: {
+          type: 'batchInsertExerciseRecords',
+          data: parsedRecords
+        }
+      });
+
+      if (result.result.success) {
+        wx.showToast({
+          title: `成功插入${result.result.data.insertedCount}条记录`,
+          icon: 'success'
+        });
+        this.addLog(`成功插入文件数据: ${result.result.data.insertedCount}条记录`);
+        
+        // 清空已插入的数据
+        this.setData({
+          parsedRecords: []
+        });
+      } else {
+        throw new Error(result.result.errMsg);
+      }
+    } catch (error) {
+      wx.showToast({
+        title: '插入失败: ' + error.message,
+        icon: 'none'
+      });
+      this.addLog(`文件数据插入失败: ${error.message}`);
+    } finally {
+      wx.hideLoading();
+    }
+  },
+
+  // 清空文件数据
+  clearFileData() {
+    this.setData({
+      selectedFile: null,
+      fileContent: '',
+      uploadProgress: 0,
+      parsedRecords: [],
+      showProgressBar: false
+    });
+    this.addLog('文件数据已清空');
+  },
+
+  // 计算是否显示进度条
+  updateProgressBar(progress) {
+    const showProgressBar = progress > 0 && progress < 100;
+    this.setData({
+      uploadProgress: progress,
+      showProgressBar: showProgressBar
+    });
   }
 });

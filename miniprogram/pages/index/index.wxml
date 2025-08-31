@@ -75,7 +75,7 @@
   <view class="recent-section">
     <view class="section-title">最近活动</view>
     <view class="activity-list">
-      <block wx:if="{{recentActivities && recentActivities.length > 0}}">
+      <block wx:if="{{hasRecentActivities}}">
         <view wx:for="{{recentActivities}}" wx:key="id" class="activity-item">
           <view class="activity-icon">{{item.icon}}</view>
           <view class="activity-content">
@@ -121,9 +121,9 @@
           </view>
           <view class="power_info_text_tip">{{power.tip}}</view>
         </view>
-        <image wx:if="{{!power.showItem && power.item.length}}" class="power_info_more" src="../../images/arrow.svg"></image>
-        <image wx:if="{{power.showItem && power.item.length}}" class="power_info_less" src="../../images/arrow.svg"></image>
-        <image wx:if="{{!power.item.length}}" class="power_item_icon" src="../../images/arrow.svg"></image>
+        <image wx:if="{{power.showMoreButton}}" class="power_info_more" src="../../images/arrow.svg"></image>
+        <image wx:if="{{power.showLessButton}}" class="power_info_less" src="../../images/arrow.svg"></image>
+        <image wx:if="{{power.showIcon}}" class="power_item_icon" src="../../images/arrow.svg"></image>
       </view>
       <view wx:if="{{power.showItem}}">
         <view wx:key="title" wx:for="{{power.item}}">

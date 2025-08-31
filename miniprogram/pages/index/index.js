@@ -81,6 +81,7 @@ Page({
   onLoad() {
     this.loadUserData();
     this.loadRecentActivities();
+    this.updatePowerList();
   },
 
   onShow() {
@@ -126,6 +127,18 @@ Page({
     }
   },
 
+  // 更新powerList的计算属性
+  updatePowerList() {
+    const powerList = this.data.powerList.map(power => ({
+      ...power,
+      showMoreButton: !power.showItem && power.item.length > 0,
+      showLessButton: power.showItem && power.item.length > 0,
+      showIcon: power.item.length === 0
+    }));
+
+    this.setData({ powerList });
+  },
+
   // 加载最近活动
   loadRecentActivities() {
     // 模拟活动数据
@@ -157,7 +170,8 @@ Page({
     ];
 
     this.setData({
-      recentActivities: activities
+      recentActivities: activities,
+      hasRecentActivities: activities.length > 0
     });
   },
 
