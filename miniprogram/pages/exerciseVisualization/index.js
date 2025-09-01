@@ -7,10 +7,6 @@ Page({
     totalDuration: 0,
     totalCalories: 0,
 
-
-    
-
-    
     // 心率趋势数据
     hrTrendData: [],
     hrTrendYAxisLabels: [],
@@ -24,8 +20,6 @@ Page({
     timeRangeIndex: 3,
     filterActivityTypes: ['全部', '跑步', '骑行', '游泳', '徒步', '健身'],
     filterActivityTypeIndex: -1,
-    
-
     
     // 加载状态
     loading: false
@@ -124,14 +118,6 @@ Page({
     });
   },
 
-
-
-
-
-
-
-
-
   // 处理心率趋势数据
   processHeartRateTrendData(records) {
     console.log('处理心率趋势数据，记录数量:', records ? records.length : 'undefined');
@@ -212,20 +198,6 @@ Page({
       const heartRate = yAxisMax - (topPosition / 100) * yAxisMax;
       yLabels.push(Math.round(heartRate));
     }
-    
-    // 验证坐标系统一致性
-    console.log('=== 坐标系统统一验证 ===');
-    console.log('Y轴范围:', { maxHr, yAxisMax });
-    console.log('Y轴标签:', yLabels);
-    console.log('网格线位置:', gridLinePositions);
-    console.log('网格线位置对应关系:');
-    for (let i = 0; i < yLabels.length; i++) {
-      console.log(`  - top: ${gridLinePositions[i]}% → 心率: ${yLabels[i]} BPM`);
-      // 验证网格线位置与Y轴标签的一致性
-      const expectedHeartRate = yAxisMax - (gridLinePositions[i] / 100) * yAxisMax;
-      console.log(`  - 验证: top: ${gridLinePositions[i]}% 应该对应心率: ${Math.round(expectedHeartRate)} BPM (实际: ${yLabels[i]} BPM)`);
-    }
-    console.log('========================');
 
     // 转换为图表数据 - 使用统一的坐标系统
     const trendData = recentData.map((day, index) => {
@@ -239,50 +211,13 @@ Page({
       // 使用线性映射：心率从0到yAxisMax，映射到top从100%到0%
       const yPosition = 100 - (day.avgHr / yAxisMax) * 100;
       
-      // 验证数据点位置与网格线的一致性
-      console.log(`数据点 ${day.date}: 心率=${day.avgHr}, Y位置=${yPosition}%, 网格线对齐验证:`);
-      console.log(`  - 心率=${day.avgHr}, yAxisMax=${yAxisMax}`);
-      console.log(`  - 计算: 100 - (${day.avgHr} / ${yAxisMax}) * 100 = ${yPosition}%`);
-      
-      // 基本的数据点信息输出
-      console.log(`  - 心率: ${day.avgHr} BPM, Y位置: ${yPosition.toFixed(2)}%`);
-      
       return {
         date: this.formatDateForDisplay(day.date),
         avgHr: day.avgHr,
         xPosition: xPosition,
-        yPosition: yPosition
+        yPosition: yPosition - 4
       };
     });
-
-
-
-    // 统一坐标系统最终验证
-    console.log('=== 统一坐标系统最终验证 ===');
-    console.log('Y轴范围:', { maxHr, yAxisMax });
-    console.log('Y轴标签:', yLabels);
-    console.log('网格线位置:', gridLinePositions);
-    console.log('网格线位置对应关系:');
-    for (let i = 0; i < yLabels.length; i++) {
-      console.log(`  - top: ${gridLinePositions[i]}% → 心率: ${yLabels[i]} BPM`);
-    }
-    
-
-    
-    console.log('数据点位置验证:');
-    trendData.forEach((point, index) => {
-      console.log(`  - 数据点${index}: 心率=${point.avgHr}, Y位置=${point.yPosition}%`);
-    });
-    
-    // 简化的网格线信息输出
-    console.log('网格线信息:');
-    for (let i = 0; i < yLabels.length; i++) {
-      console.log(`  - 网格线${i}: 位置${gridLinePositions[i]}%, 心率${yLabels[i]} BPM`);
-    }
-    
-    console.log('=== 坐标系统信息 ===');
-    console.log('✓ 使用统一坐标系统: top: 0% = 最大心率, top: 100% = 0 BPM');
-    console.log('========================');
     
     this.setData({
       hrTrendData: trendData,

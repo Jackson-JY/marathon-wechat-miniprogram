@@ -270,7 +270,6 @@
   position: relative;
   height: 100%;
   min-width: max-content;
-  padding-bottom: 40rpx; /* 为x轴标签留出空间 */
 }
 
 .hr-trend-chart .grid-lines {

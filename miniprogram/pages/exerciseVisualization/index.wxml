@@ -58,15 +58,14 @@
             <text class="y-label" wx:for="{{hrTrendYAxisLabels}}" wx:key="index">{{item}}</text>
           </view>
           <view class="chart-area">
-            <!-- 网格线已隐藏 -->
-            <!-- <view class="grid-lines">
+            <view class="grid-lines">
               <view 
                 class="grid-line" 
                 wx:for="{{gridLinePositions}}" 
                 wx:key="index"
                 style="top: {{item}}%"
               ></view>
-            </view> -->
+            </view>
             <scroll-view class="unified-scroll" scroll-x="true" show-scrollbar="false" bindscroll="onChartScroll">
               <view class="chart-content-unified">
                 <!-- 数据点区域 -->
